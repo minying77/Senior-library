@@ -1,20 +1,20 @@
 import VueRouter from 'vue-router';
-import Home from '@/views/Home';
-import About from '@/views/About'
+import HomeView from '@/views/HomeView';
+import AboutView from '@/views/AboutView'
 
 const router=new VueRouter({
     mode:'history',
     routes:[
         {
-            name:'Home',
+            name:'HomeView',
             path:'/',
-            component:Home,
+            component:HomeView,
             meta:{title:'页面1'}
         },
         {
-            name:'about',
-            path:'/about',
-            component:About,
+            name:'AboutView',
+            path:'/About',
+            component:AboutView,
             meta:{title:'关于'}
         },
     ]
