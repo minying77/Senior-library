@@ -1,7 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="19e532df-92a3-4536-ab28-729c340c219f" name="Changes" comment="" />
+    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="category">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/babel.config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/jsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/global.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/Header.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/router/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/utils/request.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/404.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/Layout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/Login/Login.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/AddAdmin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/List.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/AddUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/User.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/vue.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/springboot/springboot.iml" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/springboot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,35 +54,87 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2iuGAR9K5IAvsBdvh46eo9HNtW4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "front-end",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/大三下/高级软件实作-图书馆/Senior-Library/Senior-library/front-end-vue",
     "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.springboot.SpringbootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="19e532df-92a3-4536-ab28-729c340c219f" name="Changes" comment="" />
+      <changelist id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="category" />
       <created>1720332906830</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1720332906830</updated>
       <workItem from="1720332908517" duration="6000" />
+      <workItem from="1720371642912" duration="399000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
