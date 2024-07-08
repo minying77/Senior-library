@@ -2,7 +2,7 @@
   <div style="width: 80%">
     <div style="margin-bottom: 30px">新增分类</div>
     <el-form :inline="true" :rules="rules" ref="ruleForm" :model="form" label-width="100px">
-      <el-form-item label="名称" prop="rname">
+      <el-form-item label="名称" prop="name">
         <el-input v-model="form.name" placeholder="请输入名称"></el-input>
       </el-form-item>
       <el-form-item label="备注" prop="remark">
@@ -24,7 +24,7 @@ export default {
       form: {},
       rules: {
         name: [
-          { required: true, message: "请输入分类名称", trigger: "blur" },
+          { required: true, message: "请输入图书名称", trigger: "blur" },
         ],
       },
     };

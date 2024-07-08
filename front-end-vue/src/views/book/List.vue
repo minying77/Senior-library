@@ -7,6 +7,11 @@
           placeholder="请输入图书名称"
           v-model="params.name"
       ></el-input>
+      <el-input
+          style="width: 240px; margin-left: 5px"
+          placeholder="请输入图书标准码"
+          v-model="params.bookNo"
+      ></el-input>
       <el-button style="margin-left: 5px" type="primary" @click="load">
         <i class="el-icon-search"></i>
         搜索
@@ -18,15 +23,24 @@
     </div>
     <el-table :data="tableData" stripe row-key="id" default-expand-all>
       <el-table-column prop="id" label="编号" width="80"></el-table-column>
-      <el-table-column prop="name" label="名称"></el-table-column>
-      <el-table-column prop="remark" label="备注"></el-table-column>
+      <el-table-column prop="name" label="图书名称"></el-table-column>
+      <el-table-column prop="description" width="200" label="描述"></el-table-column>
+      <el-table-column prop="publishDate" label="出版日期"></el-table-column>
+      <el-table-column prop="author" label="作者"></el-table-column>
+      <el-table-column prop="publisher" label="出版社"></el-table-column>
+      <el-table-column prop="Book" label="分类"></el-table-column>
+      <el-table-column prop="bookNo" label="标准码"></el-table-column>
+      <el-table-column prop="cover" label="封面">
+        <template v-slot="scope">
+          <el-image :src="scope.row.cover" :preview-src-list="[scope.row.cover]"></el-image>
+        </template>
+      </el-table-column>
       <el-table-column prop="createtime" label="创建时间"></el-table-column>
       <el-table-column prop="updatetime" label="更新时间"></el-table-column>
       <el-table-column label="操作" width="280">
         <template v-slot="scope">
           <!-- scope.row 就是当前行数据 -->
-          <el-button type="success" v-if="!scope.row.pid" @click="handleAdd(scope.row)">添加二级图书</el-button>
-          <el-button type="primary" @click="$router.push('/editCategory?id=' + scope.row.id)">编辑</el-button>
+          <el-button type="primary" @click="$router.push('/editBook?id=' + scope.row.id)">编辑</el-button>
           <el-popconfirm
               style="margin-left: 5px"
               title="您确定删除这行数据吗？"
@@ -49,22 +63,6 @@
           :total="total"
       />
     </div>
-    <el-dialog title="添加二级图书" :visible.sync="dialogFormVisible" width="30%">
-      <el-form v-model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
-        <el-form-item label="图书名称" prop="name">
-          <el-input v-model="form.name" autocomplete="off" show-password>
-          </el-input>
-        </el-form-item>
-        <el-form-item label="图书备注" prop="remark">
-          <el-input v-model="form.remark" autocomplete="off" show-password>
-          </el-input>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button @click="dialogFormVisible = false">取 消</el-button
-        ><el-button type="primary" @click="save">确定</el-button>
-      </div>
-    </el-dialog>
 
   </div>
 </template>
@@ -73,18 +71,16 @@
 import request from "@/utils/request";
 import Cookies from "js-cookie";
 export default {
-  name: "CategoryList",
+  name: "BookList",
   data() {
     return {
       tableData: [],
       total: 0,
-      dialogFormVisible: false,
-      form: {},
-      pid:null,
       params: {
         pageNum: 1,
         pageSize: 10,
         name: "",
+        bookNo: ""
       },
       rules: {
         name: [
@@ -99,11 +95,11 @@ export default {
   },
   methods: {
     load() {
-      // fetch('http://localhost:9090/category/list').then(res=>res.json()).then(res=>{
+      // fetch('http://localhost:9090/Book/list').then(res=>res.json()).then(res=>{
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.get("/category/page", { params: this.params }).then((res) => {
+      request.get("/Book/page", { params: this.params }).then((res) => {
         if (res.code === "200") {
           this.tableData = res.data.list;
           this.total = res.data.total;
@@ -115,6 +111,7 @@ export default {
         pageNum: 1,
         pageSize: 20,
         name: "",
+        bookNo: ""
       };
       this.load();
     },
@@ -124,35 +121,12 @@ export default {
       this.load();
     },
     del(id) {
-      request.delete("/category/delete/" + id).then((res) => {
+      request.delete("/Book/delete/" + id).then((res) => {
         if (res.code === "200") {
           this.$notify.success("删除成功");
           this.load();
         } else {
           this.$notify.error(res.msg);
-        }
-      });
-    },
-    handleAdd(row){
-      //将当前行的id作为二级图书的pid
-      this.pid = row.id
-      this.dialogFormVisible = true
-    },
-    save() {
-      this.$refs["ruleForm"].validate((valid) => {
-        if (valid) {
-          //给二级图书赋值 pid
-          this.form.pid=this.pid
-          request.post("/category/save", this.form).then((res) => {
-            if (res.code === "200") {
-              this.$notify.success("新增二级分类成功");
-              this.$refs['ruleForm'].resetFields()
-              this.dialogFormVisible = false
-              this.load()
-            } else {
-              this.$notify.error(res.msg);
-            }
-          });
         }
       });
     },
