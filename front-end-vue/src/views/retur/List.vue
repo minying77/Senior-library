@@ -46,13 +46,8 @@
           <el-tag type="danger" v-if="scope.row.note === '已过期'">{{scope.row.note}}</el-tag>
         </template>
       </el-table-column>
-      <el-table-column label="操作">
-        <template v-slot="scope">
-          <el-button type="primary" @click="returnBooks(scope.row)" v-if="scope.row.status ==='已借出'">还书</el-button>
-        </template>
-      </el-table-column>
 <!--      <el-table-column prop="updatetime" label="更新时间"></el-table-column>-->
-      <el-table-column label="管理">
+      <el-table-column label="操作">
         <template v-slot="scope">
           <!-- scope.row 就是当前行数据 -->
 <!--          <el-button type="primary" @click="$router.push('/editBorrow?id=' + scope.row.id)">编辑</el-button>-->
@@ -132,7 +127,7 @@ export default {
       this.load();
     },
     del(id) {
-      request.delete("/borrow/delete/" + id).then(res => {
+      request.delete("/borrow/deleteRetur/" + id).then(res => {
         if (res.code === "200") {
           this.$notify.success("删除成功");
           this.load();
@@ -142,14 +137,7 @@ export default {
       });
     },
     returnBooks(row){
-      request.post("/borrow/saveRetur" ,row).then(res => {
-        if (res.code === "200") {
-          this.$notify.success("还书成功");
-          this.load();
-        } else {
-          this.$notify.error(res.msg);
-        }
-      });
+
     }
   },
 };
