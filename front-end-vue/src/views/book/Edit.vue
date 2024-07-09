@@ -31,6 +31,9 @@
       <el-form-item label="标准码" prop="bookNo">
         <el-input v-model="form.bookNo" placeholder="请输入标准码"></el-input>
       </el-form-item>
+      <el-form-item label="借书积分" prop="bookNo">
+        <el-input-number v-model="form.score" :min="10" :max="30" label="所需积分"></el-input-number>
+      </el-form-item>
       <el-form-item label="封面" prop="cover">
         <el-input v-model="form.cover" placeholder="请输入封面"></el-input>
       </el-form-item>
@@ -47,11 +50,17 @@ export default {
   name: "EditBook",
   data() {
     return {
-      form: {},
+      form: { score:10 },
       categories:[],
       rules: {
         name: [
           { required: true, message: "请输入图书名称", trigger: "blur" },
+        ],
+        bookNo: [
+          { required: true, message: "请输入图书标准码", trigger: "blur" },
+        ],
+        score: [
+          { required: true, message: "请输入借书积分", trigger: "blur" },
         ],
       },
     };
