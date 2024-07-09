@@ -49,13 +49,13 @@
           :total="total"
       />
     </div>
-    <el-dialog title="添加二级图书" :visible.sync="dialogFormVisible" width="30%">
+    <el-dialog title="添加二级分类" :visible.sync="dialogFormVisible" width="30%">
       <el-form v-model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
-        <el-form-item label="图书名称" prop="name">
+        <el-form-item label="分类名称" prop="name">
           <el-input v-model="form.name" autocomplete="off" show-password>
           </el-input>
         </el-form-item>
-        <el-form-item label="图书备注" prop="remark">
+        <el-form-item label="分类备注" prop="remark">
           <el-input v-model="form.remark" autocomplete="off" show-password>
           </el-input>
         </el-form-item>
