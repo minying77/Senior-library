@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100vh; overflow: hidden;position: relative;">
-    <el-card class="cover" v-if="loginAdmin.id"></el-card>
+    <el-card class="cover" v-if="loginAdmin.id">
     <slide-verify
       :l="42"
       :r="10"
@@ -12,6 +12,7 @@
       @fail="onFail"
       @refresh="onRefresh"
     ></slide-verify>
+  </el-card>
     <div class="container">
       <div class="text">登 录</div>
       <el-form v-model="admin" ref="loginForm" :rules="rules">
