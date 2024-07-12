@@ -17,7 +17,8 @@ public class Admin implements Serializable {
 
     @TableId(value="id", type = IdType.AUTO)
     private Integer id;
-    private String username;
+//    private String username;
+    private String name;
     private String phone;
     private String email;
     private String password;
