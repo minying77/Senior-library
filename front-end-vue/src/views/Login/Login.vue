@@ -15,7 +15,7 @@
   </el-card>
     <div class="container">
       <div class="text">登 录</div>
-      <el-form v-model="admin" ref="loginForm" :rules="rules">
+      <el-form :model="admin" ref="loginForm" :rules="rules">
         <el-form-item prop="username">
           <el-input
             v-model="admin.username"
@@ -70,9 +70,10 @@ export default {
   },
   methods: {
     login() {
+    console.log('###可以获取数据',this.admin)
       this.$refs["loginForm"].validate((valid) => {
         if (valid) {
-          request.post("/admin/login", this.form).then((res) => {
+          request.post("/admin/login", this.admin).then((res) => {
             if (res.code === "200") {
               this.loginAdmin = res.data; // 滑块出现
             } else {
