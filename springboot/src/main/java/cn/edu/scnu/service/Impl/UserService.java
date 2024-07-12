@@ -41,7 +41,8 @@ public class UserService implements IUserService {
     @Override
     public void addUser(User user) {
         Date date = new Date();
-        user.setUsername(DateUtil.format(date, "yyyyMMdd") + Math.abs(IdUtil.fastSimpleUUID().hashCode()));
+//        user.setUsername(DateUtil.format(date, "yyyyMMdd") + Math.abs(IdUtil.fastSimpleUUID().hashCode()));
+        user.setUserNo(DateUtil.format(date, "yyyyMMdd") + Math.abs(IdUtil.fastSimpleUUID().hashCode()));
         userMapper.insert(user);
     }
 
