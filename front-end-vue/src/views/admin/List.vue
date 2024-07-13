@@ -56,7 +56,7 @@
             title="您确定删除这行数据吗？"
             @confirm="del(scope.row.id)"
           >
-            <el-button type="danger">删除</el-button>
+            <el-button type="danger" slot="reference">删除</el-button>
           </el-popconfirm>
           <el-button
             style="margin-left: 5px"
