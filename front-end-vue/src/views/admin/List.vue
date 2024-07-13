@@ -119,6 +119,7 @@ export default {
         ],
       },
       admin: Cookies.get("admin") ? JSON.parse(Cookies.get("admin")) : {},
+      dialogFormVisible: false
     };
   },
   created() {
