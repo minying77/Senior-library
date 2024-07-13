@@ -1,21 +1,22 @@
 <template>
-  <div style="height: 100vh; overflow: hidden;position: relative;">
+  <div style="height: 100vh; overflow: hidden; position: relative">
     <el-card class="cover" v-if="loginAdmin.id">
-    <slide-verify
-      :l="42"
-      :r="10"
-      :w="310"
-      :h="155"
-      :accuracy="5"
-      slider-text="向右滑动"
-      @success="onSuccess"
-      @fail="onFail"
-      @refresh="onRefresh"
-    ></slide-verify>
-  </el-card>
+      <slide-verify
+        :l="42"
+        :r="10"
+        :w="310"
+        :h="155"
+        :accuracy="5"
+        :imgs="puzzleImgList"
+        slider-text="向右滑动"
+        @success="onSuccess"
+        @fail="onFail"
+        @refresh="onRefresh"
+      ></slide-verify>
+    </el-card>
     <div class="container">
       <div class="text">登 录</div>
-      <el-form v-model="admin" ref="loginForm" :rules="rules">
+      <el-form :model="admin" ref="loginForm" :rules="rules">
         <el-form-item prop="username">
           <el-input
             v-model="admin.username"
@@ -50,10 +51,14 @@
 <script>
 import request from "@/utils/request";
 import Cookies from "js-cookie";
+import img0 from "@/assets/0.jpg";
+import img1 from "@/assets/1.jpg";
+import img2 from "@/assets/2.jpg";
 export default {
   name: "Login",
   data() {
     return {
+      puzzleImgList: [img0, img1, img2],
       admin: {},
       loginAdmin: {},
       rules: {
@@ -72,7 +77,7 @@ export default {
     login() {
       this.$refs["loginForm"].validate((valid) => {
         if (valid) {
-          request.post("/admin/login", this.form).then((res) => {
+          request.post("/admin/login", this.admin).then((res) => {
             if (res.code === "200") {
               this.loginAdmin = res.data; // 滑块出现
             } else {
