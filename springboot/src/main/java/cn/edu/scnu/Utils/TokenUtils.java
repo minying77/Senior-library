@@ -7,6 +7,7 @@ import cn.hutool.core.util.StrUtil;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.Nullable;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -44,6 +45,7 @@ public class TokenUtils {
      * @return user对象
      *  /admin?token=xxxx
      */
+    @Nullable
     public static Admin getCurrentAdmin() {
         String token = null;
         try {

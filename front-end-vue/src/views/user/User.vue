@@ -144,7 +144,7 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.get("/user/page", {params: this.params}).then((res) => {
+      request.post("/user/page", {params: this.params}).then((res) => {
         if (res.code === "200") {
           this.tableData = res.data.list;
           this.total = res.data.total;

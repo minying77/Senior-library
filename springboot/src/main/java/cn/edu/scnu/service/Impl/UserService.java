@@ -55,7 +55,7 @@ public class UserService implements IUserService {
 
     @Override
     public void updateUserById(User user) {
-        log.info(String.valueOf(user));
+        log.info(user.getStatus()+" and " + user.getId());
         user.setUpdatetime(new Date());
         userMapper.updateById(user);
     }

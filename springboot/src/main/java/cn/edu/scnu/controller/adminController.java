@@ -37,7 +37,7 @@ public class adminController {
      * 分页查询管理者
      * @return 该页用户list
      */
-    @GetMapping("/page")
+    @PostMapping("/page")
     public Result page(@RequestBody AdminPageRequest adminPageRequest){
         List<Admin> userList= adminService.page(adminPageRequest);  //page(当前页码, 每页记录数)
         return Result.success(userList);

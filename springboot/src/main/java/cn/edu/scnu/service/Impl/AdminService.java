@@ -9,6 +9,7 @@ import cn.edu.scnu.mapper.AdminMapper;
 import cn.edu.scnu.service.IAdminService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DuplicateKeyException;
@@ -20,6 +21,7 @@ import java.util.List;
 
 import static cn.edu.scnu.controller.adminController.securePass;
 
+@Slf4j
 @Service
 public class AdminService implements IAdminService {
 
@@ -76,18 +78,21 @@ public class AdminService implements IAdminService {
     @Override
     public LoginDTO login(LoginRequest loginRequest) {
 
+        log.info(loginRequest.getPassword()+loginRequest.getName());
         QueryWrapper<Admin> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("username", loginRequest.getUsername());
+        queryWrapper.eq("name", loginRequest.getName());
+
 
         //queryWrapper.eq("password", loginRequest.getPassword());
-
         Admin admin = adminMapper.selectOne(queryWrapper);
 
         if(admin == null){
             throw new ServiceException("用户名不存在");
         }
-        String adminPass = securePass(admin.getPassword());
-        if(!loginRequest.getPassword().equals(adminPass)){
+        //System.out.println(admin.getPassword());
+        log.info(admin.getPassword());
+        log.info(loginRequest.getPassword());
+        if(!admin.getPassword().equals(loginRequest.getPassword())){
             throw new ServiceException("用户名或密码错误");
         }
 

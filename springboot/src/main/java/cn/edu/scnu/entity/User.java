@@ -29,4 +29,5 @@ public class User {
     private Date updatetime;
 //    private boolean status; // 1:可用 0:禁用
     private String status;
+    private Integer account;
 }

@@ -131,10 +131,12 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.get("/admin/page", { params: this.params }).then((res) => {
-        if (res.code === "200") {
-          this.tableData = res.data.list;
-          this.total = res.data.total;
+      request.post("/admin/page", { params: this.params }).then((res) => {
+        if (res.code === "1") {
+          // this.tableData = res.data.list;
+          // this.total = res.data.total;
+          this.tableData=res.data;
+          this.total=res.data.length;
         }
       });
     },

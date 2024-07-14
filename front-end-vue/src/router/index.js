@@ -7,7 +7,7 @@ import Cookies from 'js-cookie';
 Vue.use(VueRouter)
 
 const routes = [
-  // === 登录 ===
+  //=== 登录 ===
   {
     path: '/login',
     name: 'Login',
