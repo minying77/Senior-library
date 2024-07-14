@@ -80,8 +80,8 @@
       />
     </div>
 
-    <el-dialog title="修改密码" :visible.sync="dialogFormVisible" width="305">
-      <el-form v-model="form" label-width="100px" ref="formRef" :rules="rules">
+    <el-dialog title="修改密码" :visible.sync="dialogFormVisible" width="30%">
+      <el-form :model="form" label-width="100px" ref="formRef" :rules="rules">
         <el-form-item label="新密码" prop="newPass">
           <el-input v-model="form.newPass" autocomplete="off" show-password>
           </el-input>
@@ -114,7 +114,7 @@ export default {
       },
       rules: {
         newPass: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
+          { required: true, message: "请输入新密码", trigger: "blur" },
           { min: 3, max: 10, message: "长度在3-10个字符", trigger: "blur" },
         ],
       },
@@ -181,7 +181,7 @@ export default {
                 this.dialogFormVisible = false;
               }
             } else {
-              this.$notify.error(res.msg);
+              this.$notify.error("修改失败");
             }
           });
         }
