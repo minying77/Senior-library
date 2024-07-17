@@ -1,7 +1,7 @@
 
 <template>
   <div style="width: 80%">
-    <div style="margin-bottom: 30px">新增分类</div>
+    <div style="margin-bottom: 30px">新增父级分类</div>
     <el-form :inline="true" :rules="rules" ref="ruleForm" :model="form" label-width="100px">
       <el-form-item label="名称" prop="name">
         <el-input v-model="form.name" placeholder="请输入名称"></el-input>
@@ -34,7 +34,7 @@ export default {
     save() {
       this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
-          request.post("/category/save", this.form).then((res) => {
+          request.post("/category/add", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增成功");
               this.form = {};

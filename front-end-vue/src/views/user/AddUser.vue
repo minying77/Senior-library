@@ -55,7 +55,7 @@ export default {
         return callback(new Error("手机不能为空"));
       }
       setTimeout(() => {
-        if (!/^[1][3,4,5,6,7,8,9][0-9]{9}$/.test(value)) {
+        if (!/^1[0-9]{10}$/.test(value)) {
           callback(new Error("请输入合法的手机号"));
         } else {
           callback();
@@ -75,7 +75,7 @@ export default {
     save() {
       this.$refs['ruleForm'].validate((valid) => {
         if (valid) {
-          request.post("/user/save", this.form).then((res) => {
+          request.post("/user/add", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增成功");
               this.form = {};

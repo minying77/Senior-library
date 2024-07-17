@@ -2,8 +2,8 @@
   <div style="width: 80%">
     <div style="margin-bottom: 30px">新增图书</div>
     <el-form :inline="true" :rules="rules" ref="ruleForm" :model="form" label-width="100px">
-      <el-form-item label="名称" prop="rname">
-        <el-input v-model="form.name" placeholder="请输入名称"></el-input>
+      <el-form-item label="名称" prop="title">
+        <el-input v-model="form.title" placeholder="请输入名称"></el-input>
       </el-form-item>
       <el-form-item label="描述" prop="description">
         <el-input style="width: 400px" type="textarea" v-model="form.description" placeholder="请输入描述"></el-input>
@@ -29,20 +29,23 @@
             v-model="form.categories"
             :options="categories"></el-cascader>
       </el-form-item>
-      <el-form-item label="标准码" prop="bookNo">
-        <el-input v-model="form.bookNo" placeholder="请输入标准码"></el-input>
+      <el-form-item label="标准码" prop="isbn">
+        <el-input v-model="form.isbn" placeholder="请输入标准码"></el-input>
       </el-form-item>
-      <el-form-item label="借书积分" prop="bookNo">
+      <el-form-item label="借书积分" prop="score">
         <el-input-number v-model="form.score" :min="10" :max="30" label="所需积分"></el-input-number>
       </el-form-item>
-      <el-form-item label="数量" prop="nums">
-        <el-input v-model="form.nums" placeholder="请输入数量"></el-input>
+      <el-form-item label="馆藏数量" prop="store_num">
+        <el-input v-model="form.storeNum" placeholder="请输入数量"></el-input>
+      </el-form-item>
+      <el-form-item label="押金" prop="price">
+        <el-input v-model="form.price" placeholder="请输入押金"></el-input>
       </el-form-item>
       <br>
       <el-form-item label="封面" prop="cover">
         <el-upload
             class="avatar-uploader"
-            :action="'http://localhost:9090/api/book/file/upload?token='+this.admin.token"
+            :action="'http://localhost:8081/api/book/file/upload'"
             :show-file-list="false"
             :on-success="handleCoverSuccess">
           <img v-if="form.cover" :src="form.cover" class="avatar">
@@ -77,16 +80,16 @@ export default {
       form: { score: 10 ,cover:''},
       categories:[],
       rules: {
-        name: [
+        title: [
           { required: true, message: "请输入图书名称", trigger: "blur" },
         ],
-        bookNo: [
+        isbn: [
           { required: true, message: "请输入图书标准码", trigger: "blur" },
         ],
         score: [
           { validator: checkNums, trigger: "blur" },
         ],
-        nums: [
+        storeNum:  [
           { required: true, message: "请输入数量", trigger: "blur" },
           { validator: checkNums, trigger: "blur" },
         ],
@@ -95,6 +98,7 @@ export default {
   },
   created() {
     request.get('/category/tree').then(res=>{
+      console.log(res)
       this.categories = res.data
     })
   },
@@ -107,7 +111,7 @@ export default {
     save() {
       this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
-          request.post("/book/save", this.form).then((res) => {
+          request.post("/book/add", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增成功");
               this.form = {};

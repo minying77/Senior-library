@@ -5,7 +5,7 @@
       <el-input
         style="width: 240px"
         placeholder="请输入用户名"
-        v-model="params.username"
+        v-model="params.name"
       ></el-input>
       <el-input
         style="width: 240px; margin-left: 5px"
@@ -28,7 +28,7 @@
     </div>
     <el-table :data="tableData" stripe>
       <el-table-column prop="id" label="编号" width="80"></el-table-column>
-      <el-table-column prop="username" label="用户名"></el-table-column>
+      <el-table-column prop="name" label="用户名"></el-table-column>
       <el-table-column prop="phone" label="联系方式"></el-table-column>
       <el-table-column prop="email" label="邮箱"></el-table-column>
       <el-table-column prop="createtime" label="创建时间"></el-table-column>
@@ -53,7 +53,7 @@
           >
           <el-popconfirm
             style="margin-left: 5px"
-            title="您确定删除这行数据吗？"
+            title="您确定删除该条管理员数据及其留言数据嘛？"
             @confirm="del(scope.row.id)"
           >
             <el-button type="danger" slot="reference">删除</el-button>
@@ -107,8 +107,8 @@ export default {
       form: {},
       params: {
         pageNum: 1,
-        pageSize: 20,
-        username: "",
+        pageSize: 10,
+        name: "",
         phone: "",
         email: "",
       },
@@ -131,9 +131,9 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.get("/admin/page", { params: this.params }).then((res) => {
+      request.post("/admin/page", this.params).then((res) => {
         if (res.code === "200") {
-          this.tableData = res.data.list;
+          this.tableData = res.data.records;
           this.total = res.data.total;
         }
       });
@@ -141,8 +141,8 @@ export default {
     reset() {
       this.params = {
         pageNum: 1,
-        pageSize: 20,
-        username: "",
+        pageSize: 10,
+        name: "",
         phone: "",
         email: "",
       };
@@ -170,7 +170,11 @@ export default {
     savePass() {
       this.$refs["formRef"].validate((valid) => {
         if (valid) {
-          request.put("/admin/password", this.form).then((res) => {
+          request.post("/admin/updatePass", {
+            newPass: this.form.newPass,
+            id: this.form.id
+          }).then((res) => {
+            console.log(this.form.newPass)
             if (res.code === "200") {
               this.$notify.success("修改成功");
               if (this.form.id === this.admin.id) {

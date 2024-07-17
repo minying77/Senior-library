@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="item">用户名：{{ admin.adminname }}</div>
+    <div class="item">用户名：{{ admin.name }}</div>
     <div>手机号：{{ admin.phone }}</div>
     <div>邮箱：{{ admin.email }}</div>
   </div>

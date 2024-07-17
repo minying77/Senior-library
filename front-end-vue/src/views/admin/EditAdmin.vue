@@ -3,7 +3,7 @@
     <div style="margin-bottom: 30px">编辑管理员</div>
     <el-form :inline="true" :model="form" label-width="100px">
       <el-form-item label="用户名" prop="username">
-        <el-input v-model="form.username" placeholder="请输入用户名"></el-input>
+        <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
       </el-form-item>
       <el-form-item label="联系方式" prop="phone">
         <el-input v-model="form.phone" placeholder="请输入联系方式"></el-input>
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     save() {
-      request.post("/admin/update", this.form).then((res) => {
+      request.put("/admin/update", this.form).then((res) => {
         if (res.code === "200") {
           this.$notify.success("更新成功");
           this.$router.push("/adminList");
