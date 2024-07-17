@@ -7,9 +7,11 @@ import cn.edu.scnu.controller.request.CategoryPageRequest;
 import cn.edu.scnu.entity.Admin;
 import cn.edu.scnu.entity.Category;
 import cn.edu.scnu.service.ICategoryService;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -42,11 +44,22 @@ public class CategoryController {
      * 分页查询分类
      * @return 该页dto对象格式的list
      */
-    @GetMapping("/page")
+    @PostMapping("/page")
     public Result page(@RequestBody CategoryPageRequest categoryPageRequest){
-        List<CategoryPageDTO> list= categoryService.page(categoryPageRequest);  //page(当前页码, 每页记录数)
+        Page<CategoryPageDTO> list= categoryService.page(categoryPageRequest);  //page(当前页码, 每页记录数)
         return Result.success(list);
     }
+
+
+    @GetMapping("/tree")
+    private Result tree(){
+
+        List<CategoryPageDTO> list = categoryService.tree();
+        return Result.success(list);
+    }
+
+
+
 
     /**
      * 根据id查询分类
