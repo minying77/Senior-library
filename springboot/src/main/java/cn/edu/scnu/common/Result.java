@@ -15,12 +15,12 @@ public class Result {
 
     //增删改 成功响应
     public static Result success(){
-        return new Result("1",null,"success");
+        return new Result("200",null,"success");
     }
 
     //查询 成功响应
     public static Result success(Object data){
-        return new Result("1", data,"success");
+        return new Result("200", data,"success");
     }
 
     //失败响应

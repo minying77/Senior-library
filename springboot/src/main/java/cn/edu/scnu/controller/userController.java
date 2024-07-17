@@ -33,9 +33,9 @@ public class userController {
      * 分页查询用户
      * @return 该页用户list
      */
-    @GetMapping("/page")
+    @PostMapping("/page")
     public Result page(@RequestBody  UserPageRequest userPageRequest){
-        List<User> userList= userService.page(userPageRequest);  //page(当前页码, 每页记录数)
+        Page<User> userList= userService.page(userPageRequest);  //page(当前页码, 每页记录数)
         return Result.success(userList);
     }
 
