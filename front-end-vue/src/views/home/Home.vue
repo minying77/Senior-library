@@ -1,8 +1,8 @@
-<!--vue使用echarts  npm安装：npm i echarts -S-->
+<!--vue使用echarts      npm安装：npm i echarts -S-->
 <template>
   <div>
     <div style="margin: 20px 0">
-      <el-select class="input" v-model="timeRange" placeholder="请选择" @change="load"> //从后台加载最新的数据
+ <el-select class="input" v-model="timeRange" placeholder="请选择" @change="load">    <!--     从后台加载最新的数据-->
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -12,7 +12,7 @@
       </el-select>
     </div>
     <el-card>
-      <div id="line" style="width: 100% ; height: 400px"></div>
+      <div id="line" style="width: 100%; height: 400px"></div>
     </el-card>
   </div>
 </template>
