@@ -25,7 +25,7 @@ export default {
       form: {},
       rules: {
         name: [
-          { required: true, message: "请输入图书名称", trigger: "blur" },
+          { required: true, message: "请输入分类名称", trigger: "blur" },
         ],
       },
     };
@@ -34,12 +34,12 @@ export default {
     save() {
       this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
-          request.post("/category/save", this.form).then((res) => {
+          request.get("/category/update", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增成功");
               this.form = {};
             } else {
-              this.$notify.error(res.msg);
+              this.$notify.error("来！创死老子！");
             }
           });
         }

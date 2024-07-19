@@ -131,8 +131,9 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.post("/admin/page", { params: this.params }).then((res) => {
-        if (res.code === "1") {
+      request.get("/admin/page", { params: this.params }).then((res) => {
+        console.log("我要鼠了"+res.data)
+        if (res.code === "200") {
           // this.tableData = res.data.list;
           // this.total = res.data.total;
           this.tableData=res.data;

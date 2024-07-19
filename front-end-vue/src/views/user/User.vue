@@ -144,10 +144,13 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.post("/user/page", {params: this.params}).then((res) => {
+      request.get("/user/page", {params: this.params}).then((res) => {
+        console.log("您好，我是朱伊晴1");
         if (res.code === "200") {
           this.tableData = res.data.list;
           this.total = res.data.total;
+          // this.tableData=res.data;
+          // this.total=res.data.length;
         }
       });
     },
