@@ -33,16 +33,16 @@
       <el-table-column prop="email" label="邮箱"></el-table-column>
       <el-table-column prop="createtime" label="创建时间"></el-table-column>
       <el-table-column prop="updatetime" label="更新时间"></el-table-column>
-      <el-table-column label="状态" width="230">
-        <template v-slot="scope">
-          <el-switch
-            v-model="scope.row.status"
-            @change="changeStatus(scope.row)"
-            active-color="#13ce66"
-            inactive-color="#ff4949"
-          />
-        </template>
-      </el-table-column>
+<!--      <el-table-column label="状态" width="230">-->
+<!--        <template v-slot="scope">-->
+<!--          <el-switch-->
+<!--            v-model="scope.row.status"-->
+<!--            @change="changeStatus(scope.row)"-->
+<!--            active-color="#13ce66"-->
+<!--            inactive-color="#ff4949"-->
+<!--          />-->
+<!--        </template>-->
+<!--      </el-table-column>-->
       <el-table-column label="操作" width="230">
         <template v-slot="scope">
           <!-- scope.row 就是当前行数据 -->
