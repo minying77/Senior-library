@@ -1,4 +1,4 @@
-<!--vue使用echarts       npm安装：npm i echarts -S-->
+<!--vue使用echarts    npm安装：npm i echarts -S-->
 <template>
   <div>
     <div style="margin: 20px 0">
