@@ -4,20 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="try to solve the problems on July 17th">
+    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="echarts图表前端">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +23,11 @@
     <option name="BRANCH" value="origin/dev-lxt-1" />
   </component>
   <component name="Git.Settings">
+    <option name="PREVIEW_PUSH_PROTECTED_ONLY" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -157,7 +149,7 @@
       <workItem from="1720769705508" duration="10966000" />
       <workItem from="1720856742992" duration="6117000" />
       <workItem from="1720877984683" duration="9037000" />
-      <workItem from="1720956738408" duration="24205000" />
+      <workItem from="1720956738408" duration="24878000" />
     </task>
     <task id="LOCAL-00001" summary="category">
       <created>1720797028546</created>
@@ -187,7 +179,56 @@
       <option name="project" value="LOCAL" />
       <updated>1721407859628</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat:echarts图表前端">
+      <created>1721410637152</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721410637152</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat:echarts图表前端">
+      <created>1721410703639</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721410703639</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat:echarts图表前端">
+      <created>1721410753597</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721410753597</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat:echarts图表前端">
+      <created>1721410801919</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721410801919</updated>
+    </task>
+    <task id="LOCAL-00009" summary="echarts图表前端">
+      <created>1721410844080</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721410844080</updated>
+    </task>
+    <task id="LOCAL-00010" summary="echarts图表前端">
+      <created>1721411048960</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1721411048960</updated>
+    </task>
+    <task id="LOCAL-00011" summary="echarts图表前端">
+      <created>1721411211765</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721411211765</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,7 +245,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/front-end" />
+                        <option value="front-end" />
                       </list>
                     </value>
                   </entry>
@@ -221,7 +262,10 @@
     <MESSAGE value="category" />
     <MESSAGE value="commit1" />
     <MESSAGE value="try to solve the problems on July 17th" />
-    <option name="LAST_COMMIT_MESSAGE" value="try to solve the problems on July 17th" />
+    <MESSAGE value="feat:echarts图表前端" />
+    <MESSAGE value="图表实现echarts" />
+    <MESSAGE value="echarts图表前端" />
+    <option name="LAST_COMMIT_MESSAGE" value="echarts图表前端" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
