@@ -3,6 +3,7 @@ package cn.edu.scnu.controller.dto;
 import cn.edu.scnu.entity.Category;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.Date;
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * 封装Category page方法的返回结果类: 带有二级分类的树形结构
  */
-
+@CrossOrigin
 @Data
 public class CategoryPageDTO {
     private Integer id;

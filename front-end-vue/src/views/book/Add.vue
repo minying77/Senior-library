@@ -107,12 +107,12 @@ export default {
     save() {
       this.$refs["ruleForm"].validate((valid) => {
         if (valid) {
-          request.post("/book/save", this.form).then((res) => {
+          request.get("/book/save", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增成功");
               this.form = {};
             } else {
-              this.$notify.error(res.msg);
+              this.$notify.error("我警告你图书管理别烦我了");
             }
           });
         }

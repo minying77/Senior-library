@@ -75,12 +75,16 @@ export default {
     save() {
       this.$refs['ruleForm'].validate((valid) => {
         if (valid) {
-          request.post("/user/save", this.form).then((res) => {
+          request.get("/user/save", this.form).then((res) => {
+            console.log("我执行了request,res.code为"+res.code);
+
             if (res.code === "200") {
+              console.log("成功");
               this.$notify.success("新增成功");
               this.form = {};
             } else {
-              this.$notify.error(res.msg);
+              console.log("失败");
+              this.$notify.error("我真的无语了家人们");
             }
           });
         }
