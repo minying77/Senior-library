@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="commit1">
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/Login/wa.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="try to solve the problems on July 17th">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/AddAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/AddAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/AddUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/AddUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/User.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/vue.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/vue.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/dto/CategoryPageDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/dto/CategoryPageDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/dto/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/dto/LoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/dto/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/dto/LoginDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/entity/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/entity/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,29 +59,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "front-end",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/大三下/高级软件实作-图书馆/Senior-library-xt/Senior-library",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;front-end&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/大三下/高级软件实作-图书馆/Senior-library-xt/Senior-library&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;d164d99c46d45be6b1e7585ff7ea10e7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -163,7 +157,7 @@
       <workItem from="1720769705508" duration="10966000" />
       <workItem from="1720856742992" duration="6117000" />
       <workItem from="1720877984683" duration="9037000" />
-      <workItem from="1720956738408" duration="13752000" />
+      <workItem from="1720956738408" duration="24205000" />
     </task>
     <task id="LOCAL-00001" summary="category">
       <created>1720797028546</created>
@@ -179,7 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1720958160211</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit1">
+      <created>1721399595038</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1721399595038</updated>
+    </task>
+    <task id="LOCAL-00004" summary="try to solve the problems on July 17th">
+      <created>1721407859628</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721407859628</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +220,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="category" />
     <MESSAGE value="commit1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit1" />
+    <MESSAGE value="try to solve the problems on July 17th" />
+    <option name="LAST_COMMIT_MESSAGE" value="try to solve the problems on July 17th" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
