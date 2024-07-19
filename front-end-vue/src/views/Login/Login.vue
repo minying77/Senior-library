@@ -17,12 +17,12 @@
     <div class="container">
       <div class="text">登 录</div>
       <el-form :model="admin" ref="loginForm" :rules="rules">
-        <el-form-item prop="name">
+        <el-form-item prop="username">
           <el-input
-              v-model="admin.name"
-              placeholder="请输入账号"
-              prefix-icon="el-icon-user"
-              size="medium"
+            v-model="admin.username"
+            placeholder="请输入账号"
+            prefix-icon="el-icon-user"
+            size="medium"
           ></el-input>
         </el-form-item>
         <el-form-item prop="password">
@@ -34,7 +34,7 @@
             size="medium"
           ></el-input>
         </el-form-item>
-        <el-form-item prop="name">
+        <el-form-item prop="username">
           <el-button
             @click="login"
             style="width: 100%"
@@ -62,14 +62,14 @@ export default {
       admin: {},
       loginAdmin: {},
       rules: {
-        name: [
-          { required: true, message: "请输入用户名", trigger: "blur" },
-          { min: 3, max: 10, message: "长度在3-10个字符", trigger: "blur" },
-        ],
-        password: [
-          { required: true, message: "请输入密码", trigger: "blur" },
-          { min: 3, max: 10, message: "长度在3-10个字符", trigger: "blur" },
-        ],
+        // username: [
+        //   { required: true, message: "请输入用户名", trigger: "blur" },
+        //   { min: 3, max: 10, message: "长度在3-10个字符", trigger: "blur" },
+        // ],
+        // password: [
+        //   { required: true, message: "请输入密码", trigger: "blur" },
+        //   { min: 3, max: 10, message: "长度在3-10个字符", trigger: "blur" },
+        // ],
       },
     };
   },
@@ -77,15 +77,18 @@ export default {
     login() {
       this.$refs["loginForm"].validate((valid) => {
         if (valid) {
-          request.post("/admin/login", this.admin).then((res) => {
-            if (res.code === "200") {
-              this.loginAdmin = res.data; // 滑块出现
-            } else {
-              this.$notify.error(res.msg);
-            }
-          });
+          this.loginAdmin={ ...this.admin, id:'1' }
+          // request.post("admin/login", this.admin).then((res) => {
+          //   if (res.code === "200") {
+          //     this.loginAdmin = res.data; // 滑块出现
+          //   } else {
+          //     this.$notify.error(res.msg);
+          //   }
+          // });
         }
+
       });
+
     },
     onSuccess() {
       Cookies.set("admin", JSON.stringify(this.loginAdmin));

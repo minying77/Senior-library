@@ -35,7 +35,7 @@ public class userController {
      */
     @PostMapping("/page")
     public Result page(@RequestBody  UserPageRequest userPageRequest){
-        Page<User> userList= userService.page(userPageRequest);  //page(当前页码, 每页记录数)
+        List<User> userList= userService.page(userPageRequest);  //page(当前页码, 每页记录数)
         return Result.success(userList);
     }
 

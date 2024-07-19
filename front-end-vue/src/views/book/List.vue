@@ -5,12 +5,12 @@
       <el-input
           style="width: 240px"
           placeholder="请输入图书名称"
-          v-model="params.title"
+          v-model="params.name"
       ></el-input>
       <el-input
           style="width: 240px; margin-left: 5px"
           placeholder="请输入图书标准码"
-          v-model="params.isbn"
+          v-model="params.bookNo"
       ></el-input>
       <el-button style="margin-left: 5px" type="primary" @click="load">
         <i class="el-icon-search"></i>
@@ -23,16 +23,14 @@
     </div>
     <el-table :data="tableData" stripe row-key="id" default-expand-all>
       <el-table-column prop="id" label="编号" width="80"></el-table-column>
-      <el-table-column prop="title" label="图书名称"></el-table-column>
-      <el-table-column prop="isbn" label="标准码"></el-table-column>
+      <el-table-column prop="name" label="图书名称"></el-table-column>
+      <el-table-column prop="bookNo" label="标准码"></el-table-column>
       <el-table-column prop="description" width="200" label="描述"></el-table-column>
       <el-table-column prop="publishDate" label="出版日期"></el-table-column>
       <el-table-column prop="author" label="作者"></el-table-column>
       <el-table-column prop="publisher" label="出版社"></el-table-column>
-      <el-table-column prop="category" label="分类"></el-table-column>
+      <el-table-column prop="Book" label="分类"></el-table-column>
       <el-table-column prop="score" label="借书积分"></el-table-column>
-      <el-table-column prop="storeNum" label="馆藏数量"></el-table-column>
-      <el-table-column prop="storingNum" label="在馆数量"></el-table-column>
       <el-table-column prop="cover" label="封面">
         <template v-slot="scope">
           <el-image :src="scope.row.cover" :preview-src-list="[scope.row.cover]"></el-image>
@@ -82,8 +80,8 @@ export default {
       params: {
         pageNum: 1,
         pageSize: 10,
-        title: "",
-        isbn: ""
+        name: "",
+        bookNo: ""
       },
       admin: Cookies.get("admin") ? JSON.parse(Cookies.get("admin")) : {},
     };
@@ -97,9 +95,9 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.post("/book/page", this.params).then((res) => {
+      request.get("/Book/page", { params: this.params }).then((res) => {
         if (res.code === "200") {
-          this.tableData = res.data.records;
+          this.tableData = res.data.list;
           this.total = res.data.total;
         }
       });
@@ -107,9 +105,9 @@ export default {
     reset() {
       this.params = {
         pageNum: 1,
-        pageSize: 10,
-        title: "",
-        isbn: ""
+        pageSize: 20,
+        name: "",
+        bookNo: ""
       };
       this.load();
     },
@@ -119,7 +117,7 @@ export default {
       this.load();
     },
     del(id) {
-      request.delete("/book/delete/" + id).then((res) => {
+      request.delete("/Book/delete/" + id).then((res) => {
         if (res.code === "200") {
           this.$notify.success("删除成功");
           this.load();

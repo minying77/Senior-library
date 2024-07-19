@@ -1,4 +1,3 @@
-<!--这个文件可以直接去掉？-->
 <template>
   <div style="width: 80%">
     <div style="margin-bottom: 30px">编辑图书</div>

@@ -1,23 +1,18 @@
 package cn.edu.scnu.controller;
 
 import cn.edu.scnu.common.Result;
-import cn.edu.scnu.controller.dto.AdminPass;
 import cn.edu.scnu.controller.dto.LoginDTO;
 import cn.edu.scnu.controller.request.AdminPageRequest;
 import cn.edu.scnu.controller.request.LoginRequest;
 import cn.edu.scnu.entity.Admin;
 import cn.edu.scnu.service.IAdminService;
 import cn.hutool.crypto.SecureUtil;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-@Slf4j
 @CrossOrigin
 @RestController
 @RequestMapping("/admin")
@@ -44,7 +39,7 @@ public class adminController {
      */
     @PostMapping("/page")
     public Result page(@RequestBody AdminPageRequest adminPageRequest){
-        Page<Admin> userList= adminService.page(adminPageRequest);  //page(当前页码, 每页记录数)
+        List<Admin> userList= adminService.page(adminPageRequest);  //page(当前页码, 每页记录数)
         return Result.success(userList);
     }
 
@@ -114,16 +109,6 @@ public class adminController {
 
         session.setAttribute("loginDetail", adminDTO);
         return Result.success(adminDTO);
-    }
-
-    @PostMapping("/updatePass")
-    private Result updatePass(@RequestBody AdminPass adminPass){
-
-        log.info(adminPass.getNewPass());
-        adminPass.setNewPass(securePass(adminPass.getNewPass()));
-        adminService.updatePass(adminPass);
-
-        return Result.success();
     }
 
     /**

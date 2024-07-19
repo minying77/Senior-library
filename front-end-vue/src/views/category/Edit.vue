@@ -1,9 +1,9 @@
 
 <template>
   <div style="width: 80%">
-    <div style="margin-bottom: 30px">编辑分类</div>
+    <div style="margin-bottom: 30px">编辑图书</div>
     <el-form :inline="true" :rules="rules" ref="ruleForm" :model="form" label-width="100px">
-      <el-form-item label="名称" prop="name">
+      <el-form-item label="名称" prop="rname">
         <el-input v-model="form.name" placeholder="请输入名称"></el-input>
       </el-form-item>
       <el-form-item label="备注" prop="remark">

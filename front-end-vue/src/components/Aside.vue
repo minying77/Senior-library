@@ -13,10 +13,10 @@
       <el-submenu index="user">
         <template slot="title">
           <i class="el-icon-question"></i>
-          <span>读者管理</span>
+          <span>会员管理</span>
         </template>
-        <el-menu-item index="/addUser">读者添加</el-menu-item>
-        <el-menu-item index="/userList">读者列表</el-menu-item>
+        <el-menu-item index="/addUser">会员添加</el-menu-item>
+        <el-menu-item index="/userList">会员列表</el-menu-item>
       </el-submenu>
       <el-submenu index="admin">
         <template slot="title">
@@ -45,12 +45,11 @@
       <el-submenu index="borrow">
         <template slot="title">
           <i class="el-icon-document-copy"></i>
-          <span>借阅管理</span>
+          <span>借书管理</span>
         </template>
-        <!--<el-menu-item index="/addBorrow">借书添加</el-menu-item>-->
+        <el-menu-item index="/addBorrow">借书添加</el-menu-item>
         <el-menu-item index="/borrowList">借书列表</el-menu-item>
       </el-submenu>
-      <!--下面的直接不要？-->
       <el-submenu index="retur">
         <template slot="title">
           <i class="el-icon-document"></i>

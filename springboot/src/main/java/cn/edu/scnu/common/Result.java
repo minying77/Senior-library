@@ -15,7 +15,7 @@ public class Result {
 
     //增删改 成功响应
     public static Result success(){
-        return new Result("200",null,"success");
+        return new Result("1",null,"success");
     }
 
     //查询 成功响应
