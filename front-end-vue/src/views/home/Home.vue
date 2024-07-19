@@ -12,7 +12,7 @@
       </el-select>
     </div>
     <el-card>
-      <div id="line" style="width: 100%; height: 400px"></div>
+      <div id="line" style="width: 100% ; height: 400px"></div>
     </el-card>
   </div>
 </template>
