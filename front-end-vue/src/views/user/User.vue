@@ -70,7 +70,7 @@
       </el-pagination>
     </div>
     <el-dialog title="充值" :visible.sync="dialogFormVisible" width="30%">
-      <el-form v-model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
+      <el-form :model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
         <el-form-item label="当前账户积分" prop="account">
           <el-input disabled v-model="form.account" autocomplete="off" >
           </el-input>
@@ -102,7 +102,7 @@ export default {
         if (value<10||value>200) {
           callback(new Error("请输入大于等于10且小于等于200的整数"));
         } else {
-          callback();
+          callback()
         }
       }, 1000);
     };
@@ -121,9 +121,9 @@ export default {
         score: [
           { required: true, message: "请输入积分", trigger: "blur" },
           { validator:checkNums, trigger: "blur" }
-        ],
-      },
-    };
+        ]
+      }
+    }
   },
   created() {
     this.load();
@@ -144,9 +144,9 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.post("/user/page", this.params).then((res) => {
+      request.post("/user/page", {params:this.params}).then(res => {
         if (res.code === "200") {
-          this.tableData = res.data.records;
+          this.tableData = res.data.list;
           this.total = res.data.total;
         }
       });
@@ -182,9 +182,10 @@ export default {
     addAccount() {
         this.$refs["ruleForm"].validate((valid) => {
           if (valid) {
-            request.put('/user/update', this.form).then(res => {
+            request.put('/user/account', this.form).then(res => {
               if (res.code === '200') {
                 this.$notify.success('充值成功')
+                this.dialogFormVisible=false
                 this.load()
               } else {
                 this.$notify.error(res.msg)

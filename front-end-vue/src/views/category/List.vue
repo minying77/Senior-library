@@ -26,7 +26,7 @@
       <el-table-column label="操作" width="280">
         <template v-slot="scope">
           <!-- scope.row 就是当前行数据 -->
-          <el-button type="success" v-if="!scope.row.pid" @click="handleAdd(scope.row)">添加子级分类</el-button>
+          <el-button type="success" v-if="!scope.row.pid" @click="handleAdd(scope.row)">添加二级分类</el-button>
           <el-button type="primary" @click="$router.push('/editCategory?id=' + scope.row.id)">编辑</el-button>
           <el-popconfirm
               style="margin-left: 5px"
@@ -47,17 +47,18 @@
           :page-size="params.pageSize"
           layout="prev,pager,next"
           @current-change="handleCurrentChange"
-          :total="total"
-      />
+          :total="total">
+      </el-pagination>
     </div>
+
     <el-dialog title="添加二级分类" :visible.sync="dialogFormVisible" width="30%">
-      <el-form v-model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
+      <el-form :model="form" label-width="100px" ref="ruleForm" :rules="rules" style="width: 85%">
         <el-form-item label="分类名称" prop="name">
-          <el-input v-model="form.name" autocomplete="off" show-password>
+          <el-input v-model="form.name" autocomplete="off">
           </el-input>
         </el-form-item>
         <el-form-item label="分类备注" prop="remark">
-          <el-input v-model="form.remark" autocomplete="off" show-password>
+          <el-input v-model="form.remark" autocomplete="off">
           </el-input>
         </el-form-item>
       </el-form>
@@ -77,6 +78,7 @@ export default {
   name: "CategoryList",
   data() {
     return {
+      category: Cookies.get("category") ? JSON.parse(Cookies.get("category")) : {},
       tableData: [],
       total: 0,
       dialogFormVisible: false,
@@ -89,14 +91,13 @@ export default {
       },
       rules: {
         name: [
-          { required: true, message: "请输入分类名称", trigger: "blur" },
+          {required: true, message: "请输入分类名称", trigger: "blur" }
         ]
-      },
-      admin: Cookies.get("admin") ? JSON.parse(Cookies.get("admin")) : {},
-    };
+      }
+    }
   },
   created() {
-    this.load();
+    this.load()
   },
   methods: {
     load() {
@@ -104,18 +105,20 @@ export default {
       //   console.log(res)
       //   this.tableData=res
       // })
-      request.post("/category/page", this.params).then((res) => {
+      request.post("/category/page", {params:this.params}).then(res => {
         if (res.code === "200") {
-          this.tableData = res.data.records;
+          this.tableData = res.data.list;
           this.total = res.data.total;
         }
-      });
+      })
     },
     reset() {
       this.params = {
         pageNum: 1,
         pageSize: 10,
-        name: "",
+        username: "",
+        phone:"",
+        email:""
       };
       this.load();
     },
@@ -132,7 +135,7 @@ export default {
         } else {
           this.$notify.error(res.msg);
         }
-      });
+      })
     },
     handleAdd(row){
       //将当前行的id作为二级图书的pid
@@ -144,7 +147,7 @@ export default {
         if (valid) {
           //给二级图书赋值 pid
           this.form.pid=this.pid
-          request.post("/category/add", this.form).then((res) => {
+          request.post("/category/save", this.form).then((res) => {
             if (res.code === "200") {
               this.$notify.success("新增二级分类成功");
               this.$refs['ruleForm'].resetFields()
