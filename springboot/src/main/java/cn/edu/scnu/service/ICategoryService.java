@@ -4,6 +4,7 @@ import cn.edu.scnu.controller.dto.CategoryPageDTO;
 import cn.edu.scnu.controller.request.AdminPageRequest;
 import cn.edu.scnu.controller.request.CategoryPageRequest;
 import cn.edu.scnu.entity.Category;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public interface ICategoryService {
 
     List<Category> list();
 
-    List<CategoryPageDTO> page(CategoryPageRequest categoryPageRequest);
+    Page<CategoryPageDTO> page(CategoryPageRequest categoryPageRequest);
 
     Category getById(Integer id);
 
@@ -20,4 +21,6 @@ public interface ICategoryService {
     void update(Category category);
 
     void deleteById(Integer id);
+
+    List<CategoryPageDTO> tree();
 }
