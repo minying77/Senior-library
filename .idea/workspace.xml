@@ -4,47 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="home.vue部分修改">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="本地同步">
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/Carousel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/aside/helpAside.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/header/userHeader.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/helpLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/userLayout.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/main/userMain.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/test1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/home/Home.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/user-vue.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/Login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/Utils/TokenUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/Utils/TokenUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/common/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/common/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/CategoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/adminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/adminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/bookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/bookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/request/BookPageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/request/BookPageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/userController.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/controller/userController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/mapper/AdminMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IAdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IAdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IBookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IBookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/ICategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/java/cn/edu/scnu/service/Impl/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/common/Result.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/common/Result.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/adminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/adminController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/userController.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/controller/userController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/IAdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/IAdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/Impl/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/Impl/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/Impl/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/springboot/target/classes/cn/edu/scnu/service/Impl/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/aside/adminAside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/header/adminHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/router/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/404.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/adminLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/Login/Login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Login/wa.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/AddAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/AddAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/EditAdmin.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/home/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/retur/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/retur/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/AddUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/AddUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/EditUser.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/User.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,6 +50,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Vue Single File Component" />
       </list>
     </option>
   </component>
@@ -67,7 +63,7 @@
     <option name="RESET_MODE" value="MIXED" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/front-end-vue/src/views/admin-vue/home/Home.vue" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -91,29 +87,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;front-end&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/大三下/高级软件实作-图书馆/Senior-library-xt/Senior-library&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;d164d99c46d45be6b1e7585ff7ea10e7&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "front-end",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/javaWeb/music",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "d164d99c46d45be6b1e7585ff7ea10e7",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue" />
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src" />
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\views\user-vue\home" />
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\views\user-vue" />
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\components\main" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -212,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721413580181</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="本地同步">
+      <created>1721413889117</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721413889117</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +259,8 @@
     <MESSAGE value="commit1" />
     <MESSAGE value="squash! feat:echarts图表前端" />
     <MESSAGE value="home.vue部分修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="home.vue部分修改" />
+    <MESSAGE value="本地同步" />
+    <option name="LAST_COMMIT_MESSAGE" value="本地同步" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

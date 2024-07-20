@@ -1,27 +1,29 @@
 <template>
   <div>
     <!-- 头部区域 -->
-    <Header />
-    <!-- 侧边栏和主体 -->
+    <userHeader />
+    <!-- 主体 -->
     <div class="main">
-      <!-- 侧边栏导航 -->
-      <Aside />
-      <!-- 主体数据 -->
       <div class="container">
+        <!-- 轮播-->
+        <userMain/>
+        <!--主页内容，用路由(index.js)实现-->
         <router-view />
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
-import Header from "@/components/Header";
-import Aside from "@/components/Aside";
+import userHeader from "@/components/header/userHeader";
+import userMain from "@/components/main/userMain";
 export default {
-  name: "Layout",
-  components: { Header, Aside },
+  name: "userLayout",
+  components: { userHeader, userMain },
 };
 </script>
+
 
 <style lang="less" scoped>
 .main {

@@ -1,8 +1,10 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Home from '@/views/home/Home.vue';
-import Layout from '@/views/Layout.vue';
+import Home from '@/views/admin-vue/home/Home.vue';
+import Layout from '@/components/layout/adminLayout.vue';
 import Cookies from 'js-cookie';
+import adminLayout from "@/components/layout/adminLayout";
+import userLayout from "@/components/layout/userLayout";
 
 Vue.use(VueRouter)
 
@@ -11,72 +13,72 @@ const routes = [
   {
     path: '/login',
     name: 'Login',
-    component: () => import('@/views/Login/Login.vue'),
+    component: () => import('@/views/admin-vue/Login/Login.vue'),
   },
   // === 主页 ===
   {
     path: '/',
-    name: 'Layout',
-    component: Layout,
+    name: 'userLayout',
+    component: userLayout,
     redirect: '/home',
     // 子路由
     children: [
       {
         path: 'home',
         name: 'Home',
-        component: () => import('@/views/home/Home.vue')
+        component: () => import('@/views/user-vue/home/Home.vue')
       },
       // === user ===
       {
         path: 'userList',
         name: 'UserList',
-        component: () => import('@/views/user/User.vue'),
+        component: () => import('@/views/admin-vue/user/User.vue'),
       },
       {
         path: 'addUser',
         name: 'AddUser',
-        component: () => import('@/views/user/AddUser.vue'),
+        component: () => import('@/views/admin-vue/user/AddUser.vue'),
       },
       {
         path: 'editUser',
         name: 'EditUser',
-        component: () => import('@/views/user/EditUser.vue'),
+        component: () => import('@/views/admin-vue/user/EditUser.vue'),
       },
       // === admin ===
       {
         path: 'adminList',
         name: 'AdminList',
-        component: () => import('@/views/admin/List.vue'),
+        component: () => import('@/views/admin-vue/admin/List.vue'),
       },
       {
         path: 'addAdmin',
         name: 'AddAdmin',
-        component: () => import('@/views/admin/AddAdmin.vue'),
+        component: () => import('@/views/admin-vue/admin/AddAdmin.vue'),
       },
       {
         path: 'editAdmin',
         name: 'EditAdmin',
-        component: () => import('@/views/admin/EditAdmin.vue'),
+        component: () => import('@/views/admin-vue/admin/EditAdmin.vue'),
       },
         // === Category ===
-      { path: 'categoryList', name: 'CategoryList', component: () => import('@/views/category/List.vue') },
-      { path: 'addCategory', name: 'AddCategory', component: () => import('@/views/category/Add.vue') },
-      { path: 'editCategory', name: 'EditCategory', component: () => import('@/views/category/Edit.vue') },
+      { path: 'categoryList', name: 'CategoryList', component: () => import('@/views/admin-vue/category/List.vue') },
+      { path: 'addCategory', name: 'AddCategory', component: () => import('@/views/admin-vue/category/Add.vue') },
+      { path: 'editCategory', name: 'EditCategory', component: () => import('@/views/admin-vue/category/Edit.vue') },
       // === Book ===
-      { path: 'bookList', name: 'BookList', component: () => import('@/views/book/List.vue') },
-      { path: 'addBook', name: 'AddBook', component: () => import('@/views/book/Add.vue') },
-      { path: 'editBook', name: 'EditBook', component: () => import('@/views/book/Edit.vue') },
+      { path: 'bookList', name: 'BookList', component: () => import('@/views/admin-vue/book/List.vue') },
+      { path: 'addBook', name: 'AddBook', component: () => import('@/views/admin-vue/book/Add.vue') },
+      { path: 'editBook', name: 'EditBook', component: () => import('@/views/admin-vue/book/Edit.vue') },
       // === Borrow ===
-      { path: 'borrowList', name: 'BorrowList', component: () => import('@/views/borrow/List.vue') },
-      { path: 'addBorrow', name: 'AddBorrow', component: () => import('@/views/borrow/Add.vue') },
-      { path: 'editBorrow', name: 'EditBorrow', component: () => import('@/views/borrow/Edit.vue') },
+      { path: 'borrowList', name: 'BorrowList', component: () => import('@/views/admin-vue/borrow/List.vue') },
+      { path: 'addBorrow', name: 'AddBorrow', component: () => import('@/views/admin-vue/borrow/Add.vue') },
+      { path: 'editBorrow', name: 'EditBorrow', component: () => import('@/views/admin-vue/borrow/Edit.vue') },
       // === Return ===
-      { path: 'returList', name: 'returList', component: () => import('@/views/retur/List.vue') }
+      { path: 'returList', name: 'returList', component: () => import('@/views/admin-vue/retur/List.vue') }
     ]
   },
   {
     path: '*',
-    component: () => import('@/views/404.vue')
+    component: () => import('@/components/404.vue')
   }
 ]
 

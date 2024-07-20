@@ -2,7 +2,7 @@
   <div class="header">
     <div class="left">
       <img class="logo" src="@/assets/logo.png" alt="" />
-      <span class="title">图书管理系统</span>
+      <span class="title">　图书管理系统</span>
     </div>
     <div class="right">
       <el-dropdown size="medium">
@@ -11,8 +11,8 @@
         </span>
         <el-dropdown-menu slot="dropdown" style="margin-top: -5px">
           <el-dropdown-item>
-            <div style="width: 50px; text-align: center" @click="logout">
-              退出
+            <div style="width: 60px; text-align: center" @click="logout">
+              退出登录
             </div>
           </el-dropdown-item>
         </el-dropdown-menu>

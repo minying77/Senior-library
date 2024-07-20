@@ -63,7 +63,7 @@
 
 <script>
 export default {
-  name: "Aside",
+  name: "adminAside",
   components: {},
 };
 </script>
