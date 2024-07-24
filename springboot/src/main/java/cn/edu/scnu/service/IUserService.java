@@ -1,5 +1,6 @@
 package cn.edu.scnu.service;
 
+import cn.edu.scnu.controller.dto.UserDTO;
 import cn.edu.scnu.controller.request.BaseRequest;
 import cn.edu.scnu.controller.request.UserPageRequest;
 import cn.edu.scnu.entity.User;
@@ -20,4 +21,6 @@ public interface IUserService {
     void updateUserById(User user);
 
     void deleteById(Integer id);
+
+    void addAccount(UserDTO user);
 }

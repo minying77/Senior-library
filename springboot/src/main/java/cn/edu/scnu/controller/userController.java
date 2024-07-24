@@ -1,6 +1,7 @@
 package cn.edu.scnu.controller;
 
 import cn.edu.scnu.common.Result;
+import cn.edu.scnu.controller.dto.UserDTO;
 import cn.edu.scnu.controller.request.UserPageRequest;
 import cn.edu.scnu.entity.User;
 import cn.edu.scnu.service.IUserService;
@@ -80,6 +81,12 @@ public class userController {
     @DeleteMapping("/delete/{id}")
     public Result deleteUser(@PathVariable Integer id){
         userService.deleteById(id);
+        return Result.success();
+    }
+
+    @PutMapping("/addAccount")
+    public Result addAccount(@RequestBody UserDTO user){
+        userService.addAccount(user);
         return Result.success();
     }
 }

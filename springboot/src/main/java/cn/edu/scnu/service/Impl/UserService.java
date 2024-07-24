@@ -1,5 +1,6 @@
 package cn.edu.scnu.service.Impl;
 
+import cn.edu.scnu.controller.dto.UserDTO;
 import cn.edu.scnu.controller.request.UserPageRequest;
 import cn.edu.scnu.entity.Borrow;
 import cn.edu.scnu.entity.Message;
@@ -13,6 +14,7 @@ import cn.edu.scnu.service.IUserService;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,6 +105,14 @@ public class UserService implements IUserService {
         messageMapper.delete(queryWrapper3);
 
         userMapper.deleteById(id);
+    }
+
+    @Override
+    public void addAccount(UserDTO user) {
+        UpdateWrapper<User> updateWrapper = new UpdateWrapper<>();
+        updateWrapper.set("account", user.getAccount()+user.getScore());
+        updateWrapper.eq("id", user.getId());
+        userMapper.update(null, updateWrapper);
     }
 
 
