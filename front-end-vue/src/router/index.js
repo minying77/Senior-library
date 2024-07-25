@@ -15,6 +15,12 @@ const routes = [
     name: 'Login',
     component: () => import('@/views/admin-vue/Login/Login.vue'),
   },
+  //=== 注册 ===
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import('@/views/admin-vue/register/Register.vue'),
+  },
   // === 主页 ===
   {
     path: '/',
