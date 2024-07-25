@@ -28,7 +28,7 @@
             size="medium"
           ></el-input>
         </el-form-item>
-        <el-form-item style="margin-bottom: 60px" prop="password">
+        <el-form-item prop="password">
           <el-input
             v-model="admin.password"
             show-password
@@ -37,8 +37,17 @@
             size="medium"
           ></el-input>
         </el-form-item>
+        <el-form-item style="margin-bottom: 60px" prop="password">
+          <el-input
+            v-model="admin.password"
+            show-password
+            placeholder="请再次输入您的密码"
+            prefix-icon="el-icon-lock"
+            size="medium"
+          ></el-input>
+        </el-form-item>
         <el-form-item>
-          <el-radio v-model="agree"
+          <el-radio v-model="radio" label="2"
             >我同意「{{
               loginRule === 0 ? "读者" : "管理者"
             }}用户使用协议」</el-radio
@@ -55,7 +64,7 @@
         </el-form-item>
       </el-form>
       <div>
-        还没有账号？<a href="/register" style="text-decoration: none;">免费注册</a>
+        <a href="#">还没有账号？免费注册</a>
       </div>
     </div>
   </div>
@@ -68,10 +77,9 @@ import img0 from "@/assets/0.jpg";
 import img1 from "@/assets/1.jpg";
 import img2 from "@/assets/2.jpg";
 export default {
-  name: "Login",
+  name: "Register",
   data() {
     return {
-      agree: '',
       loginRule: 0,
       puzzleImgList: [img0, img1, img2],
       admin: {},
