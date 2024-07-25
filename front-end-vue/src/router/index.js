@@ -5,7 +5,7 @@ import Layout from '@/components/layout/adminLayout.vue';
 import Cookies from 'js-cookie';
 import adminLayout from "@/components/layout/adminLayout";
 import userLayout from "@/components/layout/userLayout";
-
+import helpLayout from "@/components/layout/helpLayout";
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +14,35 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/admin-vue/Login/Login.vue'),
+  },
+    //=== 指南 ===
+  {
+    path: '/helpLayout',
+    name: 'helpLayout',
+    component: helpLayout,
+    redirect: '/helpLayout/help1',
+    children: [
+      {
+        path: 'help1',
+        name: 'help1',
+        component: () => import('@/views/user-vue/help/help1.vue'),
+      },
+      {
+        path: 'help2',
+        name: 'help2',
+        component: () => import('@/views/user-vue/help/help2.vue'),
+      },
+      {
+        path: 'help3',
+        name: 'help3',
+        component: () => import('@/views/user-vue/help/help3.vue'),
+      },
+      {
+        path: 'help4',
+        name: 'help4',
+        component: () => import('@/views/user-vue/help/help4.vue'),
+      }
+    ]
   },
   // === 主页 ===
   {
@@ -26,7 +55,7 @@ const routes = [
       {
         path: 'home',
         name: 'Home',
-        component: () => import('@/views/user-vue/home/Home.vue')
+        component: () => import('@/views/user-vue/home/Home.vue'),
       },
       // === user ===
       {

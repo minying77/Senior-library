@@ -1,5 +1,5 @@
 <template>
-<button>test1</button>
+<button>test1-测试使用的vue页面</button>
 </template>
 
 <script>

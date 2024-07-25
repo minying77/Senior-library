@@ -4,42 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="本地同步">
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/Carousel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/aside/helpAside.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/header/userHeader.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/helpLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/userLayout.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/main/userMain.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/components/test1.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/home/Home.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end-vue/user-vue.md" afterDir="false" />
+    <list default="true" id="6086b47f-a534-45d4-a168-4ba263aad1b2" name="Changes" comment="feat：用户主页大致框架">
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/轮播1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/轮播2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/轮播3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/assets/轮播4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/detail/bookDetail.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/help/help1.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/help/help2.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/help/help3.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/help/help4.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Aside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/aside/adminAside.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/Header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/header/adminHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/aside/helpAside.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/aside/helpAside.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/header/userHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/header/userHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/layout/helpLayout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/helpLayout.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/main/userMain.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/main/userMain.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/components/test1.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/test1.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end-vue/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/404.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/404.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Layout.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/components/layout/adminLayout.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Login/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/Login/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/Login/wa.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/AddAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/AddAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/EditAdmin.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/EditAdmin.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/book/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/book/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/borrow/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/borrow/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/Add.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/Edit.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/home/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/retur/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/retur/List.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/AddUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/AddUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/EditUser.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/EditUser.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/admin/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/category/List.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/User.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/admin-vue/user/User.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/home/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/src/views/user-vue/home/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end-vue/user-vue.md" beforeDir="false" afterPath="$PROJECT_DIR$/front-end-vue/user-vue.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +36,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
         <option value="Vue Single File Component" />
       </list>
     </option>
@@ -90,6 +77,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -112,11 +100,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\assets" />
       <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue" />
       <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src" />
       <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\views\user-vue\home" />
       <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\views\user-vue" />
-      <recent name="D:\大三下\高级软件实作-图书馆\Senior-Library\Senior-library\front-end-vue\src\components\main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -195,6 +183,7 @@
       <workItem from="1720856742992" duration="6117000" />
       <workItem from="1720877984683" duration="9037000" />
       <workItem from="1720956738408" duration="13752000" />
+      <workItem from="1721654266567" duration="8182000" />
     </task>
     <task id="LOCAL-00001" summary="category">
       <created>1720797028546</created>
@@ -224,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1721413889117</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat：用户主页大致框架">
+      <created>1721498618647</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721498618647</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,7 +256,8 @@
     <MESSAGE value="squash! feat:echarts图表前端" />
     <MESSAGE value="home.vue部分修改" />
     <MESSAGE value="本地同步" />
-    <option name="LAST_COMMIT_MESSAGE" value="本地同步" />
+    <MESSAGE value="feat：用户主页大致框架" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat：用户主页大致框架" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

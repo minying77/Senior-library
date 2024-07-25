@@ -91,5 +91,6 @@ export default {
 
 在组件的模板中，我们使用 Element UI 提供的 el-carousel 和 el-carousel-item 组件来展示轮播图。我们使用 v-for 指令遍历 items 数组，并使用 :src 绑定图片的 URL。在 el-carousel-item 组件内部，我们添加了一个 div 元素，用于展示文字内容。
 5.在usermain.vue中实现轮播
+6.user-vue的Home.vue中的分页默认按照总量为1000，平均每页100个，可通过写方法获取当前图书数量来修改total的值。
 
 

@@ -15,11 +15,22 @@
 </template>
 
 <script>
+import userHeader from "@/components/header/userHeader";
+import helpAside from "@/components/aside/helpAside";
 export default {
-  name: "help"
-}
+  name: "helpLayout",
+  components:{ userHeader,helpAside },
+};
 </script>
 
 <style scoped>
-
+.main {
+  display: flex;
+.container {
+  flex: 1;
+  width: 0;
+  background-color: white;
+  padding: 10px;
+}
+}
 </style>

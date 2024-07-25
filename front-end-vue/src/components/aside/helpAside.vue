@@ -6,44 +6,51 @@
         router
         class="el-menu-demo"
     >
-      <el-menu-item index="/">
-        <i class="el-icon-eleme"></i>
-        <span>开放情况</span>
+      <el-button @click="goBack"  type="text" icon="el-icon-arrow-left" style="color: black;margin-top:10px;width:130px;font-size: 15px;align-content: center" >返回首页</el-button>
+      <el-menu-item index="/helpLayout/help1">
+        <i class="el-icon-timer"></i>
+        <span>读者须知</span>
       </el-menu-item>
-      <el-submenu index="user">
+      <el-menu-item index="/helpLayout/help2">
         <template slot="title">
-          <i class="el-icon-question"></i>
-          <span>读者须知</span>
-        </template>
-      </el-submenu>
-      <el-submenu index="admin">
-        <template slot="title">
-          <i class="el-icon-user"></i>
+          <i class="el-icon-finished"></i>
           <span>办证须知</span>
         </template>
-      </el-submenu>
-      <el-submenu index="category">
+      </el-menu-item>
+      <el-menu-item index="/helpLayout/help3">
         <template slot="title">
-          <i class="el-icon-s-operation"></i>
+          <i class="el-icon-error"></i>
           <span>遗失损毁</span>
         </template>
-      </el-submenu>
-      <el-submenu index="book">
-        <template slot="title">
-          <i class="el-icon-notebook-1"></i>
-          <span>图书管理</span>
-        </template>
-      </el-submenu>
+      </el-menu-item>
+      <el-menu-item index="/helpLayout/help4">
+          <i class="el-icon-tickets"></i>
+          <span>政策法规</span>
+      </el-menu-item>
+
     </el-menu>
   </div>
 </template>
 
 <script>
 export default {
-  name: "helpAside"
-}
+  name: "helpAside",
+  components: {},
+  methods: {
+    goBack() {
+      this.$router.push('/home');
+      console.log('go back');
+    }
+  }
+};
 </script>
 
-<style scoped>
-
+<style lang="less" scoped>
+.aside {
+  width: 160px;
+  overflow: hidden;
+  margin-right: 2px;
+  background-color: #fff;
+  min-height: calc(100vh - 62px);
+}
 </style>

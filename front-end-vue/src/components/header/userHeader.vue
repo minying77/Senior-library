@@ -6,7 +6,7 @@
     </div>
     <div class="right">
         <el-button type="text" style="color:black;font-size: 14px">个人信息　　</el-button>
-      <el-button type="text" style="color: black;font-size: 14px">使用指南　　</el-button>
+      <el-button @click="helpPage" type="text" style="color: black;font-size: 14px">帮助中心　　</el-button>
       <el-dropdown size="medium">
         <span class="el-dropdown-link" style="cursor: pointer">
           　　{{ admin.username }}<i class="el-icon-arrow-down el-icon--right"></i>
@@ -38,6 +38,10 @@ export default {
       Cookies.remove("admin");
       this.$router.push("/login");
     },
+    helpPage(){
+      // 在index.js中写一个path为'/helpLayout'的路由请求
+      this.$router.push('/helpLayout');
+    }
   },
 };
 </script>
