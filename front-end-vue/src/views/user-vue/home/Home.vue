@@ -105,12 +105,12 @@ export default {
 
   methods: {
     getHotBook(form) {
-      var that = this;
-      this.axios.post('/api/book/getHot', form).then(function (response) {
-        that.hotBook = response.data
-        that.hotBookList = that.hotBookList.concat(that.hotBook);
-        // console.log(response.data)
-      })
+      // var that = this;
+      // this.axios.post('/api/book/getHot', form).then(function (response) {
+      //   that.hotBook = response.data
+      //   that.hotBookList = that.hotBookList.concat(that.hotBook);
+      //   // console.log(response.data)
+      // })
     },
     getHotPage() {
       var that = this;

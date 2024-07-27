@@ -1,6 +1,6 @@
 <template>
   <div style="height: 100vh; overflow: hidden; position: relative">
-    <el-card class="cover" v-if="loginAdmin.id">
+    <el-card class="cover" v-if="loginObj.id">
       <slide-verify
         :l="42"
         :r="10"
@@ -19,10 +19,10 @@
         <el-radio :label="0">读者</el-radio>
         <el-radio :label="1">管理者</el-radio>
       </el-radio-group>
-      <el-form :model="admin" ref="loginForm" :rules="rules">
+      <el-form :model="obj" ref="loginForm" :rules="rules">
         <el-form-item prop="username">
           <el-input
-            v-model="admin.username"
+            v-model="obj.username"
             placeholder="请输入您的账号"
             prefix-icon="el-icon-user"
             size="medium"
@@ -30,7 +30,7 @@
         </el-form-item>
         <el-form-item style="margin-bottom: 60px" prop="password">
           <el-input
-            v-model="admin.password"
+            v-model="obj.password"
             show-password
             placeholder="请输入您的密码"
             prefix-icon="el-icon-lock"
@@ -55,7 +55,9 @@
         </el-form-item>
       </el-form>
       <div>
-        还没有账号？<a href="/register" style="text-decoration: none;">免费注册</a>
+        还没有账号？<a href="/register" style="text-decoration: none"
+          >免费注册</a
+        >
       </div>
     </div>
   </div>
@@ -71,11 +73,11 @@ export default {
   name: "Login",
   data() {
     return {
-      agree: '',
+      agree: "",
       loginRule: 0,
       puzzleImgList: [img0, img1, img2],
-      admin: {},
-      loginAdmin: {},
+      obj: {},
+      loginObj: {},
       rules: {
         // username: [
         //   { required: true, message: "请输入用户名", trigger: "blur" },
@@ -92,19 +94,33 @@ export default {
     login() {
       this.$refs["loginForm"].validate((valid) => {
         if (valid) {
-          this.loginAdmin = { ...this.admin, id: "1" };
-          // request.post("admin/login", this.admin).then((res) => {
-          //   if (res.code === "200") {
-          //     this.loginAdmin = res.data; // 滑块出现
-          //   } else {
-          //     this.$notify.error(res.msg);
-          //   }
-          // });
+          // this.loginObj = { ...this.obj, id: "1" };
+          if (this.loginRule === 1) {
+            request.post("admin/login", this.obj).then((res) => {
+              if (res.code === "200") {
+                this.loginObj = res.data; // 滑块出现
+              } else {
+                this.$notify.error(res.msg);
+              }
+            });
+          } else {
+            request.post("user/login", this.obj).then((res) => {
+              if (res.code === "200") {
+                this.loginObj = res.data; // 滑块出现
+              } else {
+                this.$notify.error(res.msg);
+              }
+            });
+          }
         }
       });
     },
     onSuccess() {
-      Cookies.set("admin", JSON.stringify(this.loginAdmin));
+      if (this.loginRule === 1) {
+        Cookies.set("admin", JSON.stringify(this.loginObj));
+      } else {
+        Cookies.set("user", JSON.stringify(this.loginObj));
+      }
       this.$notify.success("登录成功");
       this.$router.push("/");
     },

@@ -6,6 +6,7 @@ import Cookies from 'js-cookie';
 import adminLayout from "@/components/layout/adminLayout";
 import userLayout from "@/components/layout/userLayout";
 import helpLayout from "@/components/layout/helpLayout";
+import centerLayout from "@/components/layout/centerLayout";
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,6 +15,35 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/admin-vue/Login/Login.vue'),
+  },
+  // === 个人中心 ===
+  {
+    path: '/center',
+    name: 'center',
+    component: centerLayout,
+    redirect: '/center/userInfo',
+    children: [
+      {
+        path: 'userInfo',
+        name: 'userInfo',
+        component: () => import('@/views/user-vue/center/userInfo.vue'),
+      },
+      {
+        path: 'myBorrow',
+        name: 'myBorrow',
+        component: () => import('@/views/user-vue/center/myBorrow.vue'),
+      },
+      {
+        path: 'myMessage',
+        name: 'myMessage',
+        component: () => import('@/views/user-vue/center/myMessage.vue'),
+      },
+      // {
+      //   path: 'myReserved',
+      //   name: 'myReserved',
+      //   component: () => import('@/views/user-vue/center/myReserved.vue'),
+      // }
+    ]
   },
     //=== 指南 ===
   {
