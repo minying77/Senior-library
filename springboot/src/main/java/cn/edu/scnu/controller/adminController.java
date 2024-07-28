@@ -3,10 +3,14 @@ package cn.edu.scnu.controller;
 import cn.edu.scnu.common.Result;
 import cn.edu.scnu.controller.dto.AdminPass;
 import cn.edu.scnu.controller.dto.LoginDTO;
+import cn.edu.scnu.controller.dto.RegisterDTO;
 import cn.edu.scnu.controller.request.AdminPageRequest;
 import cn.edu.scnu.controller.request.LoginRequest;
+import cn.edu.scnu.controller.request.RegisterRequest;
 import cn.edu.scnu.entity.Admin;
+import cn.edu.scnu.exception.ServiceException;
 import cn.edu.scnu.service.IAdminService;
+import cn.edu.scnu.service.Impl.BorrowService;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
@@ -28,6 +32,8 @@ public class adminController {
     @Autowired
     IAdminService adminService;
 
+    @Autowired
+    BorrowService borrowService;
     /**
      * 查询所有管理者
      * @return adminList
@@ -108,7 +114,8 @@ public class adminController {
      */
 
     @PostMapping("/login")
-    public Result login(@RequestBody LoginRequest loginRequest,  HttpSession session){
+    public Result login(@RequestBody LoginRequest loginRequest,HttpSession session){
+//        loginRequest.setPassword(securePass(loginRequest.getPassword()));
         loginRequest.setPassword(securePass(loginRequest.getPassword()));
         LoginDTO adminDTO = adminService.login(loginRequest);
 
@@ -116,6 +123,14 @@ public class adminController {
         return Result.success(adminDTO);
     }
 
+    @PostMapping("/register")
+    public Result register(@RequestBody RegisterRequest registerRequest, HttpSession session){
+        registerRequest.setPassword(securePass(registerRequest.getPassword()));
+        RegisterDTO adminDTO=adminService.register(registerRequest);
+
+        session.setAttribute("registerDetail",adminDTO);
+        return Result.success(adminDTO);
+    }
     @PostMapping("/updatePass")
     private Result updatePass(@RequestBody AdminPass adminPass){
 
@@ -123,6 +138,21 @@ public class adminController {
         adminPass.setNewPass(securePass(adminPass.getNewPass()));
         adminService.updatePass(adminPass);
 
+        return Result.success();
+    }
+    /**
+     *  修改借阅状态
+     * @return
+     * 把borrowcontroller里的这部分弄在admin里 应该是由admin操作吧？是borrow就把这里删掉，service逻辑写好了
+     */
+    @PutMapping("/changeStatusYes/{id}")
+    public Result changeStatusYes(@PathVariable Integer id){
+        borrowService.changeStatus(id, "yes");
+        return Result.success();
+    }
+    @PutMapping("/changeStatusNo/{id}")
+    public Result changeStatusNo(@PathVariable Integer id){
+        borrowService.changeStatus(id, "no");
         return Result.success();
     }
 
@@ -134,5 +164,7 @@ public class adminController {
     public static String securePass(String password){
         return SecureUtil.md5(password + PASS_SALT);
     }
+
+
 
 }

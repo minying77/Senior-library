@@ -31,8 +31,11 @@ public class BorrowPageDTO {
     private Date createtime;
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date updatetime;
+
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
-    private Date returnDate;
+    private Date shouldReturnDate;  // 应归还日期
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date returnedDate;  // 已归还日期，未归还null
 
     private String note;
 }

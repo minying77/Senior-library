@@ -25,7 +25,7 @@ public class Borrow {
     @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
     private Date updatetime;
 
-
-//    private Integer score;
+    @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
+    private Date returnedtime;
 
 }

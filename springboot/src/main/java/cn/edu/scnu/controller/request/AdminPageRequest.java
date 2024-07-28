@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class AdminPageRequest extends BaseRequest{
     private String name;
-    private String phone;
-    private String email;
+//    private String phone;
+//    private String email;
 }

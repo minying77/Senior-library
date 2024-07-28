@@ -1,11 +1,16 @@
 package cn.edu.scnu.service.Impl;
 
+import cn.edu.scnu.controller.dto.LoginDTO;
+import cn.edu.scnu.controller.dto.RegisterDTO;
 import cn.edu.scnu.controller.dto.UserDTO;
+import cn.edu.scnu.controller.request.LoginRequest;
+import cn.edu.scnu.controller.request.RegisterRequest;
 import cn.edu.scnu.controller.request.UserPageRequest;
 import cn.edu.scnu.entity.Borrow;
 import cn.edu.scnu.entity.Message;
 import cn.edu.scnu.entity.Reservered;
 import cn.edu.scnu.entity.User;
+import cn.edu.scnu.exception.ServiceException;
 import cn.edu.scnu.mapper.BorrowMapper;
 import cn.edu.scnu.mapper.MessageMapper;
 import cn.edu.scnu.mapper.ReserveredMapper;
@@ -17,6 +22,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,9 +58,9 @@ public class UserService implements IUserService {
             queryWrapper.like("name", userPageRequest.getName());
         }
 
-        if(userPageRequest.getPhone() != null){
-            queryWrapper.like("phone", userPageRequest.getPhone());
-        }
+//        if(userPageRequest.getPhone() != null){
+//            queryWrapper.like("phone", userPageRequest.getPhone());
+//        }
 
 
         Integer pageNum = userPageRequest.getPageNum();
@@ -78,6 +84,11 @@ public class UserService implements IUserService {
 
         return userMapper.selectById(id);
 
+    }
+
+    @Override
+    public User getUserByName(String name) {
+        return userMapper.selectByName(name);
     }
 
     @Override
@@ -113,6 +124,57 @@ public class UserService implements IUserService {
         updateWrapper.set("account", user.getAccount()+user.getScore());
         updateWrapper.eq("id", user.getId());
         userMapper.update(null, updateWrapper);
+    }
+
+    @Override
+    public LoginDTO login(LoginRequest loginRequest) {
+        log.info(loginRequest.getPassword()+loginRequest.getName());
+        QueryWrapper<User>queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("name",loginRequest.getName());
+
+
+//queryWrapper.eq("password",loginRequest.getPassword());
+        User user=userMapper.selectOne(queryWrapper);
+
+        if(user==null){
+            throw new ServiceException("用户名不存在");
+        }
+//System.out.println(admin.getPassword());
+        log.info(user.getPassword());
+        log.info(loginRequest.getPassword());
+        if(!user.getPassword().equals(loginRequest.getPassword())){
+            throw new ServiceException("用户名或密码错误");
+        }
+
+        LoginDTO loginDTO=new LoginDTO();
+        BeanUtils.copyProperties(user,loginDTO);
+
+        return loginDTO;
+
+    }
+
+    @Override
+    public RegisterDTO register(RegisterRequest registerRequest){
+        log.info(registerRequest.getPassword()+registerRequest.getName());
+        QueryWrapper<User>queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("name",registerRequest.getName());
+
+//queryWrapper.eq("password",loginRequest.getPassword());
+        User user=userMapper.selectOne(queryWrapper);
+        if (user != null)
+        {
+            throw new ServiceException("用户名已存在");
+        }
+
+        User registerUser=new User();
+        registerUser.setName(registerRequest.getName());
+        registerUser.setPassword(registerRequest.getPassword());
+        Date date = new Date();
+        registerUser.setUserNo(DateUtil.format(date, "yyyyMMdd") + Math.abs(IdUtil.fastSimpleUUID().hashCode()));
+        userMapper.insert(registerUser);
+        RegisterDTO registerDTO=new RegisterDTO();
+        BeanUtils.copyProperties(registerUser,registerDTO);
+        return registerDTO;
     }
 
 

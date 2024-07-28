@@ -30,4 +30,7 @@ public class User {
 //    private boolean status; // 1:可用 0:禁用
     private String status;
     private Integer account;
+
+    // 存储user充值积分的数据
+    //private Integer score;
 }

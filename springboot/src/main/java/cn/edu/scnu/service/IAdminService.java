@@ -2,8 +2,10 @@ package cn.edu.scnu.service;
 
 import cn.edu.scnu.controller.dto.AdminPass;
 import cn.edu.scnu.controller.dto.LoginDTO;
+import cn.edu.scnu.controller.dto.RegisterDTO;
 import cn.edu.scnu.controller.request.AdminPageRequest;
 import cn.edu.scnu.controller.request.LoginRequest;
+import cn.edu.scnu.controller.request.RegisterRequest;
 import cn.edu.scnu.entity.Admin;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 
@@ -25,4 +27,6 @@ public interface IAdminService {
     LoginDTO login(LoginRequest loginRequest);
 
     void updatePass(AdminPass adminPass);
+
+    RegisterDTO register(RegisterRequest registerRequest);
 }

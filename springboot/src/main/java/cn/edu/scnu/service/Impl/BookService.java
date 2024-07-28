@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -42,6 +43,7 @@ public class BookService implements IBookService {
         QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
         if(bookPageRequest.getTitle() != null){
             queryWrapper.like("title", bookPageRequest.getTitle());
+            log.info(bookPageRequest.getTitle());
         }
 
         if(bookPageRequest.getISBN() != null){
@@ -158,5 +160,26 @@ public class BookService implements IBookService {
     @Override
     public void deleteById(Integer id) {
         bookMapper.deleteById(id);
+    }
+
+    @Override
+    public List<Book> listByCategory(Integer categoryId) {
+        log.info("当前需查询的分类id为：{}", categoryId);
+        // 首先检查categoryId是否存在于图书表中
+        int count = bookMapper.selectBookCountByCategoryId(categoryId);
+        log.info("该分类id下的图书数量为：{}", count);
+
+        if (count > 0) {
+            // 如果该分类下的图书数量大于0，执行查询
+            QueryWrapper<Book> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("category_id", categoryId);
+            List<Book> books = bookMapper.selectList(queryWrapper);
+            log.info("查询到{}本分类id为{}的图书", books.size(),categoryId);
+
+            return books;
+        } else {
+            log.info("没有查询到分类id为{}的图书", categoryId);
+            return Collections.emptyList();
+        }
     }
 }

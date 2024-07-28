@@ -2,6 +2,7 @@ package cn.edu.scnu.controller;
 
 import cn.edu.scnu.common.Result;
 import cn.edu.scnu.controller.dto.BorrowPageDTO;
+import cn.edu.scnu.controller.request.BaseRequest;
 import cn.edu.scnu.controller.request.BorrowPageRequest;
 import cn.edu.scnu.entity.Borrow;
 import cn.edu.scnu.service.IBorrowService;
@@ -105,8 +106,42 @@ public class borrowController {
         return Result.success();
     }
 
-    @PostMapping("/saveReturn")
-    public Result saveReturn(){
+
+    //根据用户id查询借阅记录
+    @PostMapping("/listByUser/{userId}")
+    public Result listByUser(@PathVariable Integer userId, @RequestBody BaseRequest baseRequest) {
+        Page<BorrowPageDTO> list = borrowService.listByUser(userId, baseRequest);
+        return Result.success(list);
+    }
+
+    /**
+     * 归还图书
+     * @param id 借书记录ID
+     * @return Result
+     */
+    @PostMapping("/saveReturn/{id}")
+    public Result saveReturn(@PathVariable Integer id){
+        borrowService.returnBook(id);
         return Result.success();
     }
+//    /**
+//     * 删除归还记录
+//     * @param id 借书记录ID
+//     * @return Result
+//     */
+//    @PostMapping("/deleteReturn/{id}")
+//    public Result deleteReturn(@PathVariable Integer id){
+//        borrowService.deleteReturnById(id);
+//        return Result.success();
+//    }
+    /**
+     * 首页图表统计
+     * @timeRange week month month2 month3
+     * @return Result
+     */
+    @GetMapping("/lineCharts/{timeRange}")
+    public Result lineCharts(@PathVariable String timeRange){
+        return Result.success(borrowService.getCountByTimeRange(timeRange));
+    }
+
 }

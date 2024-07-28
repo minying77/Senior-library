@@ -1,7 +1,11 @@
 package cn.edu.scnu.controller;
 
 import cn.edu.scnu.common.Result;
+import cn.edu.scnu.controller.dto.LoginDTO;
+import cn.edu.scnu.controller.dto.RegisterDTO;
 import cn.edu.scnu.controller.dto.UserDTO;
+import cn.edu.scnu.controller.request.LoginRequest;
+import cn.edu.scnu.controller.request.RegisterRequest;
 import cn.edu.scnu.controller.request.UserPageRequest;
 import cn.edu.scnu.entity.User;
 import cn.edu.scnu.service.IUserService;
@@ -10,7 +14,11 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
+import java.util.NavigableMap;
+
+import static cn.edu.scnu.controller.adminController.securePass;
 
 
 @CrossOrigin
@@ -51,6 +59,14 @@ public class userController {
         return Result.success(user);
     }
 
+
+//    @GetMapping("/{name}")
+//    public Result getUserByName(@PathVariable String name){
+//        User user = userService.getUserByName(name);
+//        return Result.success(user);
+//    }
+
+
     /**
      * 新增用户
      * @param user 用户信息
@@ -61,6 +77,26 @@ public class userController {
         userService.addUser(user);
         return Result.success();
     }
+
+
+    @PostMapping("/login")
+    public Result login(@RequestBody LoginRequest loginRequest,  HttpSession session){
+        loginRequest.setPassword(securePass(loginRequest.getPassword()));
+        LoginDTO userDTO = userService.login(loginRequest);
+
+        session.setAttribute("loginDetail", userDTO);
+        return Result.success(userDTO);
+    }
+
+    @PostMapping("/register")
+    public Result register(@RequestBody RegisterRequest registerRequest, HttpSession session){
+        registerRequest.setPassword(securePass(registerRequest.getPassword()));
+        RegisterDTO userDTO=userService.register(registerRequest);
+
+        session.setAttribute("registerDetail",userDTO);
+        return Result.success(userDTO);
+    }
+
 
     /**
      * 修改用户信息（注意卡号不可改动）

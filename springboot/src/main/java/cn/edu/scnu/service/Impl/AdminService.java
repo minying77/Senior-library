@@ -2,14 +2,19 @@ package cn.edu.scnu.service.Impl;
 
 import cn.edu.scnu.controller.dto.AdminPass;
 import cn.edu.scnu.controller.dto.LoginDTO;
+import cn.edu.scnu.controller.dto.RegisterDTO;
 import cn.edu.scnu.controller.request.AdminPageRequest;
 import cn.edu.scnu.controller.request.LoginRequest;
+import cn.edu.scnu.controller.request.RegisterRequest;
 import cn.edu.scnu.entity.Admin;
 import cn.edu.scnu.entity.Reply;
+import cn.edu.scnu.entity.User;
 import cn.edu.scnu.exception.ServiceException;
 import cn.edu.scnu.mapper.AdminMapper;
 import cn.edu.scnu.mapper.ReplyMapper;
 import cn.edu.scnu.service.IAdminService;
+import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.util.IdUtil;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -54,13 +59,13 @@ public class AdminService implements IAdminService {
             queryWrapper.like("name", adminPageRequest.getName());
         }
 
-        if(adminPageRequest.getEmail() != null){
-            queryWrapper.like("email", adminPageRequest.getEmail());
-        }
-
-        if(adminPageRequest.getPhone() != null){
-            queryWrapper.like("phone", adminPageRequest.getPhone());
-        }
+//        if(adminPageRequest.getEmail() != null){
+//            queryWrapper.like("email", adminPageRequest.getEmail());
+//        }
+//
+//        if(adminPageRequest.getPhone() != null){
+//            queryWrapper.like("phone", adminPageRequest.getPhone());
+//        }
 
         Integer pageNum = adminPageRequest.getPageNum();
         Integer pageSize = adminPageRequest.getPageSize();
@@ -139,5 +144,29 @@ public class AdminService implements IAdminService {
         admin.setId(adminPass.getId());
         admin.setPassword(adminPass.getNewPass());
         adminMapper.updateById(admin);
+    }
+
+    @Override
+    public RegisterDTO register(RegisterRequest registerRequest){
+        log.info(registerRequest.getPassword()+registerRequest.getName());
+        QueryWrapper<Admin>queryWrapper=new QueryWrapper<>();
+        queryWrapper.eq("name",registerRequest.getName());
+
+//queryWrapper.eq("password",loginRequest.getPassword());
+        Admin admin=adminMapper.selectOne(queryWrapper);
+        if (admin != null)
+        {
+            throw new ServiceException("用户名已存在");
+        }
+
+        Admin registerAdmin=new Admin();
+        registerAdmin.setName(registerRequest.getName());
+        registerAdmin.setPassword(registerRequest.getPassword());
+        Date date = new Date();
+        //registerAdmin.setAdminNo(DateUtil.format(date, "yyyyMMdd") + Math.abs(IdUtil.fastSimpleUUID().hashCode()));
+        adminMapper.insert(registerAdmin);
+        RegisterDTO registerDTO=new RegisterDTO();
+        BeanUtils.copyProperties(registerAdmin,registerDTO);
+        return registerDTO;
     }
 }

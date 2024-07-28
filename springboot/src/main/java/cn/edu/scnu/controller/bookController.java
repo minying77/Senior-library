@@ -4,6 +4,7 @@ import cn.edu.scnu.Utils.TokenUtils;
 import cn.edu.scnu.common.Result;
 import cn.edu.scnu.controller.dto.BookDTO;
 import cn.edu.scnu.controller.dto.CategoryPageDTO;
+import cn.edu.scnu.controller.request.BaseRequest;
 import cn.edu.scnu.controller.request.BookPageRequest;
 import cn.edu.scnu.controller.request.CategoryPageRequest;
 import cn.edu.scnu.entity.Admin;
@@ -11,11 +12,14 @@ import cn.edu.scnu.entity.Book;
 import cn.edu.scnu.entity.Category;
 import cn.edu.scnu.service.IBookService;
 import cn.hutool.core.io.FileUtil;
+import cn.hutool.core.lang.TypeReference;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.web.HttpMediaTypeException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -38,14 +42,28 @@ public class bookController {
 
     private final static String BASE_FILE_PATH=System.getProperty("user.dir") + "/files/";
 
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    private static final String ALL_BOOKS_CACHE_KEY = "ALL_BOOKS";
+
     /**
      * 查询所有图书
      * @return list
      */
     @GetMapping("/list")
     public Result list(){
-        List<Book> list =  bookService.list();
-        return Result.success(list);
+        String cacheKey = ALL_BOOKS_CACHE_KEY;
+        String json = stringRedisTemplate.opsForValue().get(cacheKey);
+        List<Book> books;
+        if (StrUtil.isBlank(json)) {
+            books = bookService.list();
+            setCache(cacheKey, JSONUtil.toJsonStr(books));
+        } else {
+            books = JSONUtil.toBean(json, new TypeReference<List<Book>>() {}, true);
+        }
+        return Result.success(books);
     }
 
     /**
@@ -54,7 +72,7 @@ public class bookController {
      */
     @PostMapping("/page")
     public Result page(@RequestBody BookPageRequest bookPageRequest){
-        IPage<BookDTO> list= bookService.page(bookPageRequest);
+        Page<BookDTO> list= bookService.page(bookPageRequest);
         return Result.success(list);
     }
 
@@ -65,8 +83,21 @@ public class bookController {
      */
     @GetMapping("/{id}")
     public Result getById(@PathVariable Integer id){
-        Book book = bookService.getById(id);
-        return Result.success(book);
+        String cacheKey = "BOOK_" + id;
+        String json = stringRedisTemplate.opsForValue().get(cacheKey);
+        Book book;
+        if (StrUtil.isBlank(json)) {
+            book = bookService.getById(id);
+            log.info(book.toString());
+            if (book != null) {
+                setCache(cacheKey, JSONUtil.toJsonStr(book));
+            }
+        } else {
+            book = JSONUtil.toBean(json, Book.class);
+        }
+        log.info(book.toString());
+        return book != null ? Result.success(book) : Result.error("图书不存在");
+
     }
 
     /**
@@ -78,6 +109,8 @@ public class bookController {
     public Result add(@RequestBody BookDTO bookDTO){
 
         bookService.add(bookDTO);
+        flushRedis(ALL_BOOKS_CACHE_KEY);
+
         return Result.success();
     }
 
@@ -91,6 +124,7 @@ public class bookController {
     @PutMapping("/update")
     public Result update(@RequestBody BookDTO bookDTO){
         bookService.update(bookDTO);
+        flushRedis(ALL_BOOKS_CACHE_KEY);
         return Result.success();
     }
 
@@ -102,6 +136,7 @@ public class bookController {
     @DeleteMapping("/delete/{id}")
     public Result delete(@PathVariable Integer id){
         bookService.deleteById(id);
+        flushRedis(ALL_BOOKS_CACHE_KEY);
         return Result.success();
     }
 
@@ -161,5 +196,44 @@ public class bookController {
         }
     }
 
+
+    // 根据分类 ID 查询图书
+    @PostMapping("/listByCategory/{categoryId}")
+    public Result listByCategory( @PathVariable Integer categoryId, @RequestBody BaseRequest baseRequest) {
+        String cacheKey = "BOOKS_BY_CATEGORY_" + categoryId;
+        String json = stringRedisTemplate.opsForValue().get(cacheKey);
+        List<Book> books;
+        if (StrUtil.isBlank(json)) {
+            log.info("缓存中分类id为{}的图书为空，从数据库获取...", categoryId);
+            books = bookService.listByCategory(categoryId);
+            setCache(cacheKey, JSONUtil.toJsonStr(books));
+        } else {
+            log.info("缓存中获取到分类id为{}的图书，data:{}", categoryId,json);
+            books = JSONUtil.toBean(json, new TypeReference<List<Book>>() {}, true);
+        }
+        return Result.success(listToPage(books, baseRequest.getPageNum(), baseRequest.getPageSize()));
+    }
+
+    private Page<Book> listToPage(List list, int pageNum, int pageSize){
+        List pageList = new ArrayList<>();
+        int curIdx = pageNum > 1 ? (pageNum - 1) * pageSize : 0;
+        for (int i = 0; i < pageSize && curIdx + i < list.size(); i++) {
+            pageList.add(list.get(curIdx + i));
+        }
+        Page<Book> page = new Page<>(pageNum, pageSize);
+        page.setRecords(pageList);
+        page.setTotal(list.size());
+        return page;
+    }
+
+    //设置缓存
+    private void setCache(String key,String value){
+        stringRedisTemplate.opsForValue().set(key,value);
+    }
+
+    //删除缓存
+    private void flushRedis(String key){
+        stringRedisTemplate.delete(key);
+    }
 
 }
